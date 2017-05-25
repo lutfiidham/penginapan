@@ -31,8 +31,8 @@ class Channel extends CI_Controller
         $row = $this->Channel_model->get_by_id($id);
         if ($row) {
             $data = array(
-		'ID_CHANNEL' => $row->ID_CHANNEL,
-		'NAMA_CHANNEL' => $row->NAMA_CHANNEL,
+		'ID_CHANNEL' => $row->id_channel,
+		'NAMA_CHANNEL' => $row->nama_channel,
 	    );
             $this->template->load('template','channel/channel_read', $data);
         } else {
@@ -61,6 +61,7 @@ class Channel extends CI_Controller
             $this->create();
         } else {
             $data = array(
+              'id_channel' => gen_id("CH", "channel", "id_channel"),
 		'NAMA_CHANNEL' => $this->input->post('NAMA_CHANNEL',TRUE),
 	    );
 
@@ -77,11 +78,11 @@ class Channel extends CI_Controller
         if ($row) {
             $data = array(
                 'button' => 'Update',
-                'action' => site_url('channel/update_action'),
-            		'ID_CHANNEL' => set_value('ID_CHANNEL', $row->ID_CHANNEL),
-            		'NAMA_CHANNEL' => set_value('NAMA_CHANNEL', $row->NAMA_CHANNEL),
+                'action' => site_url('update_action'),
+            		'ID_CHANNEL' => set_value('ID_CHANNEL', $row->id_channel),
+            		'NAMA_CHANNEL' => set_value('NAMA_CHANNEL', $row->nama_channel),
             	    );
-            $this->template->load('template','channel_form', $data);
+            $this->template->load('template','channel/channel_form', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('channel'));

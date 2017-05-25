@@ -10,7 +10,6 @@ function cmb_dinamis($name,$table,$field,$pk,$selected){
     }
     $cmb .="</select>";
     return $cmb;
-    var
 }
 
 function gen_id($kd, $table, $kolom)
@@ -21,4 +20,6 @@ function gen_id($kd, $table, $kolom)
   var_dump($id);
   $max = $id["max_id"];
   return $kd."-".str_pad($max,4,"0",STR_PAD_LEFT);
+
+  //Penggunaan echo gen_id("kode awal", "nama tabel", "nama kolom");
 }
