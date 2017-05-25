@@ -7,7 +7,7 @@
                 <div class='box-header'>
                 <h3 class='box-title'>Layanan Read</h3>
         <table class="table table-bordered">
-	    <tr><td>NAMA LAYANAN</td><td><?php echo $NAMA_LAYANAN; ?></td></tr>
+	    <tr><td>Nama Layanan</td><td><?php echo $nama_layanan; ?></td></tr>
 	    <tr><td></td><td><a href="<?php echo site_url('layanan') ?>" class="btn btn-default">Cancel</a></td></tr>
 	</table>
         </div><!-- /.box-body -->

@@ -30,11 +30,11 @@ class Promo extends CI_Controller
         $row = $this->Promo_model->get_by_id($id);
         if ($row) {
             $data = array(
-		'ID_PROMO' => $row->ID_PROMO,
-		'PROMO_AWAL' => $row->PROMO_AWAL,
-		'PROMO_AKHIR' => $row->PROMO_AKHIR,
-		'HARGA_PROMO' => $row->HARGA_PROMO,
-		'KETERANGAN_PROMO' => $row->KETERANGAN_PROMO,
+		'id_promo' => $row->id_promo,
+		'promo_awal' => $row->promo_awal,
+		'promo_akhir' => $row->promo_akhir,
+		'harga_promo' => $row->harga_promo,
+		'keterangan_promo' => $row->keterangan_promo,
 	    );
             $this->template->load('template','promo_read', $data);
         } else {
@@ -48,11 +48,11 @@ class Promo extends CI_Controller
         $data = array(
             'button' => 'Create',
             'action' => site_url('promo/create_action'),
-	    'ID_PROMO' => set_value('ID_PROMO'),
-	    'PROMO_AWAL' => set_value('PROMO_AWAL'),
-	    'PROMO_AKHIR' => set_value('PROMO_AKHIR'),
-	    'HARGA_PROMO' => set_value('HARGA_PROMO'),
-	    'KETERANGAN_PROMO' => set_value('KETERANGAN_PROMO'),
+	    'id_promo' => set_value('id_promo'),
+	    'promo_awal' => set_value('promo_awal'),
+	    'promo_akhir' => set_value('promo_akhir'),
+	    'harga_promo' => set_value('harga_promo'),
+	    'keterangan_promo' => set_value('keterangan_promo'),
 	);
         $this->template->load('template','promo_form', $data);
     }
@@ -65,10 +65,10 @@ class Promo extends CI_Controller
             $this->create();
         } else {
             $data = array(
-		'PROMO_AWAL' => $this->input->post('PROMO_AWAL',TRUE),
-		'PROMO_AKHIR' => $this->input->post('PROMO_AKHIR',TRUE),
-		'HARGA_PROMO' => $this->input->post('HARGA_PROMO',TRUE),
-		'KETERANGAN_PROMO' => $this->input->post('KETERANGAN_PROMO',TRUE),
+		'promo_awal' => $this->input->post('promo_awal',TRUE),
+		'promo_akhir' => $this->input->post('promo_akhir',TRUE),
+		'harga_promo' => $this->input->post('harga_promo',TRUE),
+		'keterangan_promo' => $this->input->post('keterangan_promo',TRUE),
 	    );
 
             $this->Promo_model->insert($data);
@@ -85,11 +85,11 @@ class Promo extends CI_Controller
             $data = array(
                 'button' => 'Update',
                 'action' => site_url('promo/update_action'),
-		'ID_PROMO' => set_value('ID_PROMO', $row->ID_PROMO),
-		'PROMO_AWAL' => set_value('PROMO_AWAL', $row->PROMO_AWAL),
-		'PROMO_AKHIR' => set_value('PROMO_AKHIR', $row->PROMO_AKHIR),
-		'HARGA_PROMO' => set_value('HARGA_PROMO', $row->HARGA_PROMO),
-		'KETERANGAN_PROMO' => set_value('KETERANGAN_PROMO', $row->KETERANGAN_PROMO),
+		'id_promo' => set_value('id_promo', $row->id_promo),
+		'promo_awal' => set_value('promo_awal', $row->promo_awal),
+		'promo_akhir' => set_value('promo_akhir', $row->promo_akhir),
+		'harga_promo' => set_value('harga_promo', $row->harga_promo),
+		'keterangan_promo' => set_value('keterangan_promo', $row->keterangan_promo),
 	    );
             $this->template->load('template','promo_form', $data);
         } else {
@@ -103,16 +103,16 @@ class Promo extends CI_Controller
         $this->_rules();
 
         if ($this->form_validation->run() == FALSE) {
-            $this->update($this->input->post('ID_PROMO', TRUE));
+            $this->update($this->input->post('id_promo', TRUE));
         } else {
             $data = array(
-		'PROMO_AWAL' => $this->input->post('PROMO_AWAL',TRUE),
-		'PROMO_AKHIR' => $this->input->post('PROMO_AKHIR',TRUE),
-		'HARGA_PROMO' => $this->input->post('HARGA_PROMO',TRUE),
-		'KETERANGAN_PROMO' => $this->input->post('KETERANGAN_PROMO',TRUE),
+		'promo_awal' => $this->input->post('promo_awal',TRUE),
+		'promo_akhir' => $this->input->post('promo_akhir',TRUE),
+		'harga_promo' => $this->input->post('harga_promo',TRUE),
+		'keterangan_promo' => $this->input->post('keterangan_promo',TRUE),
 	    );
 
-            $this->Promo_model->update($this->input->post('ID_PROMO', TRUE), $data);
+            $this->Promo_model->update($this->input->post('id_promo', TRUE), $data);
             $this->session->set_flashdata('message', 'Update Record Success');
             redirect(site_url('promo'));
         }
@@ -134,12 +134,12 @@ class Promo extends CI_Controller
 
     public function _rules() 
     {
-	$this->form_validation->set_rules('PROMO_AWAL', 'promo awal', 'trim|required');
-	$this->form_validation->set_rules('PROMO_AKHIR', 'promo akhir', 'trim|required');
-	$this->form_validation->set_rules('HARGA_PROMO', 'harga promo', 'trim|required');
-	$this->form_validation->set_rules('KETERANGAN_PROMO', 'keterangan promo', 'trim|required');
+	$this->form_validation->set_rules('promo_awal', 'promo awal', 'trim|required');
+	$this->form_validation->set_rules('promo_akhir', 'promo akhir', 'trim|required');
+	$this->form_validation->set_rules('harga_promo', 'harga promo', 'trim|required');
+	$this->form_validation->set_rules('keterangan_promo', 'keterangan promo', 'trim|required');
 
-	$this->form_validation->set_rules('ID_PROMO', 'ID_PROMO', 'trim');
+	$this->form_validation->set_rules('id_promo', 'id_promo', 'trim');
 	$this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
     }
 
@@ -165,20 +165,20 @@ class Promo extends CI_Controller
 
         $kolomhead = 0;
         xlsWriteLabel($tablehead, $kolomhead++, "No");
-	xlsWriteLabel($tablehead, $kolomhead++, "PROMO AWAL");
-	xlsWriteLabel($tablehead, $kolomhead++, "PROMO AKHIR");
-	xlsWriteLabel($tablehead, $kolomhead++, "HARGA PROMO");
-	xlsWriteLabel($tablehead, $kolomhead++, "KETERANGAN PROMO");
+	xlsWriteLabel($tablehead, $kolomhead++, "Promo Awal");
+	xlsWriteLabel($tablehead, $kolomhead++, "Promo Akhir");
+	xlsWriteLabel($tablehead, $kolomhead++, "Harga Promo");
+	xlsWriteLabel($tablehead, $kolomhead++, "Keterangan Promo");
 
 	foreach ($this->Promo_model->get_all() as $data) {
             $kolombody = 0;
 
             //ubah xlsWriteLabel menjadi xlsWriteNumber untuk kolom numeric
             xlsWriteNumber($tablebody, $kolombody++, $nourut);
-	    xlsWriteLabel($tablebody, $kolombody++, $data->PROMO_AWAL);
-	    xlsWriteLabel($tablebody, $kolombody++, $data->PROMO_AKHIR);
-	    xlsWriteNumber($tablebody, $kolombody++, $data->HARGA_PROMO);
-	    xlsWriteLabel($tablebody, $kolombody++, $data->KETERANGAN_PROMO);
+	    xlsWriteLabel($tablebody, $kolombody++, $data->promo_awal);
+	    xlsWriteLabel($tablebody, $kolombody++, $data->promo_akhir);
+	    xlsWriteNumber($tablebody, $kolombody++, $data->harga_promo);
+	    xlsWriteLabel($tablebody, $kolombody++, $data->keterangan_promo);
 
 	    $tablebody++;
             $nourut++;
@@ -208,5 +208,5 @@ class Promo extends CI_Controller
 /* End of file Promo.php */
 /* Location: ./application/controllers/Promo.php */
 /* Please DO NOT modify this information : */
-/* Generated by Harviacode Codeigniter CRUD Generator 2017-05-23 18:30:25 */
+/* Generated by Harviacode Codeigniter CRUD Generator 2017-05-25 19:35:04 */
 /* http://harviacode.com */

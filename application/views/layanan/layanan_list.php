@@ -14,7 +14,7 @@
             <thead>
                 <tr>
                     <th width="80px">No</th>
-		    <th>NAMA LAYANAN</th>
+		    <th>Nama Layanan</th>
 		    <th>Action</th>
                 </tr>
             </thead>
@@ -26,14 +26,14 @@
                 ?>
                 <tr>
 		    <td><?php echo ++$start ?></td>
-		    <td><?php echo $layanan->NAMA_LAYANAN ?></td>
+		    <td><?php echo $layanan->nama_layanan ?></td>
 		    <td style="text-align:center" width="140px">
 			<?php 
-			echo anchor(site_url('layanan/read/'.$layanan->ID_LAYANAN),'<i class="fa fa-eye"></i>',array('title'=>'detail','class'=>'btn btn-danger btn-sm')); 
+			echo anchor(site_url('layanan/read/'.$layanan->id_layanan),'<i class="fa fa-eye"></i>',array('title'=>'detail','class'=>'btn btn-danger btn-sm')); 
 			echo '  '; 
-			echo anchor(site_url('layanan/update/'.$layanan->ID_LAYANAN),'<i class="fa fa-pencil-square-o"></i>',array('title'=>'edit','class'=>'btn btn-danger btn-sm')); 
+			echo anchor(site_url('layanan/update/'.$layanan->id_layanan),'<i class="fa fa-pencil-square-o"></i>',array('title'=>'edit','class'=>'btn btn-danger btn-sm')); 
 			echo '  '; 
-			echo anchor(site_url('layanan/delete/'.$layanan->ID_LAYANAN),'<i class="fa fa-trash-o"></i>','title="delete" class="btn btn-danger btn-sm" onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
+			echo anchor(site_url('layanan/delete/'.$layanan->id_layanan),'<i class="fa fa-trash-o"></i>','title="delete" class="btn btn-danger btn-sm" onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
 			?>
 		    </td>
 	        </tr>

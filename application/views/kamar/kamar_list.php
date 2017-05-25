@@ -14,10 +14,10 @@
             <thead>
                 <tr>
                     <th width="80px">No</th>
-		    <th>NAMA KAMAR</th>
-		    <th>NO KAMAR</th>
-		    <th>KAPASITAS</th>
-		    <th>STATUS KAMAR</th>
+		    <th>Nama Kamar</th>
+		    <th>No Kamar</th>
+		    <th>Kapasitas</th>
+		    <th>Status Kamar</th>
 		    <th>Action</th>
                 </tr>
             </thead>
@@ -29,17 +29,17 @@
                 ?>
                 <tr>
 		    <td><?php echo ++$start ?></td>
-		    <td><?php echo $kamar->NAMA_KAMAR ?></td>
-		    <td><?php echo $kamar->NO_KAMAR ?></td>
-		    <td><?php echo $kamar->KAPASITAS ?></td>
-		    <td><?php echo $kamar->STATUS_KAMAR ?></td>
+		    <td><?php echo $kamar->nama_kamar ?></td>
+		    <td><?php echo $kamar->no_kamar ?></td>
+		    <td><?php echo $kamar->kapasitas ?></td>
+		    <td><?php echo $kamar->status_kamar ?></td>
 		    <td style="text-align:center" width="140px">
 			<?php 
-			echo anchor(site_url('kamar/read/'.$kamar->ID_KAMAR),'<i class="fa fa-eye"></i>',array('title'=>'detail','class'=>'btn btn-danger btn-sm')); 
+			echo anchor(site_url('kamar/read/'.$kamar->id_kamar),'<i class="fa fa-eye"></i>',array('title'=>'detail','class'=>'btn btn-danger btn-sm')); 
 			echo '  '; 
-			echo anchor(site_url('kamar/update/'.$kamar->ID_KAMAR),'<i class="fa fa-pencil-square-o"></i>',array('title'=>'edit','class'=>'btn btn-danger btn-sm')); 
+			echo anchor(site_url('kamar/update/'.$kamar->id_kamar),'<i class="fa fa-pencil-square-o"></i>',array('title'=>'edit','class'=>'btn btn-danger btn-sm')); 
 			echo '  '; 
-			echo anchor(site_url('kamar/delete/'.$kamar->ID_KAMAR),'<i class="fa fa-trash-o"></i>','title="delete" class="btn btn-danger btn-sm" onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
+			echo anchor(site_url('kamar/delete/'.$kamar->id_kamar),'<i class="fa fa-trash-o"></i>','title="delete" class="btn btn-danger btn-sm" onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
 			?>
 		    </td>
 	        </tr>

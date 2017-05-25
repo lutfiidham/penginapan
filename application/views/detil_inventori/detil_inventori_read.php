@@ -7,8 +7,8 @@
                 <div class='box-header'>
                 <h3 class='box-title'>Detil_inventori Read</h3>
         <table class="table table-bordered">
-	    <tr><td>KAMAR ID</td><td><?php echo $KAMAR_ID; ?></td></tr>
-	    <tr><td>INVENTORI ID</td><td><?php echo $INVENTORI_ID; ?></td></tr>
+	    <tr><td>Kamar Id</td><td><?php echo $kamar_id; ?></td></tr>
+	    <tr><td>Inventori Id</td><td><?php echo $inventori_id; ?></td></tr>
 	    <tr><td></td><td><a href="<?php echo site_url('detil_inventori') ?>" class="btn btn-default">Cancel</a></td></tr>
 	</table>
         </div><!-- /.box-body -->

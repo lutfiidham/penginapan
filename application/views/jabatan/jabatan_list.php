@@ -14,7 +14,7 @@
             <thead>
                 <tr>
                     <th width="80px">No</th>
-		    <th>NAMA JABATAN</th>
+		    <th>Nama Jabatan</th>
 		    <th>Action</th>
                 </tr>
             </thead>
@@ -26,14 +26,14 @@
                 ?>
                 <tr>
 		    <td><?php echo ++$start ?></td>
-		    <td><?php echo $jabatan->NAMA_JABATAN ?></td>
+		    <td><?php echo $jabatan->nama_jabatan ?></td>
 		    <td style="text-align:center" width="140px">
 			<?php 
-			echo anchor(site_url('jabatan/read/'.$jabatan->ID_JABATAN),'<i class="fa fa-eye"></i>',array('title'=>'detail','class'=>'btn btn-danger btn-sm')); 
+			echo anchor(site_url('jabatan/read/'.$jabatan->id_jabatan),'<i class="fa fa-eye"></i>',array('title'=>'detail','class'=>'btn btn-danger btn-sm')); 
 			echo '  '; 
-			echo anchor(site_url('jabatan/update/'.$jabatan->ID_JABATAN),'<i class="fa fa-pencil-square-o"></i>',array('title'=>'edit','class'=>'btn btn-danger btn-sm')); 
+			echo anchor(site_url('jabatan/update/'.$jabatan->id_jabatan),'<i class="fa fa-pencil-square-o"></i>',array('title'=>'edit','class'=>'btn btn-danger btn-sm')); 
 			echo '  '; 
-			echo anchor(site_url('jabatan/delete/'.$jabatan->ID_JABATAN),'<i class="fa fa-trash-o"></i>','title="delete" class="btn btn-danger btn-sm" onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
+			echo anchor(site_url('jabatan/delete/'.$jabatan->id_jabatan),'<i class="fa fa-trash-o"></i>','title="delete" class="btn btn-danger btn-sm" onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
 			?>
 		    </td>
 	        </tr>

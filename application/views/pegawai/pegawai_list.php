@@ -14,11 +14,11 @@
             <thead>
                 <tr>
                     <th width="80px">No</th>
-		    <th>NAMA PEGAWAI</th>
-		    <th>ALAMAT PEGAWAI</th>
-		    <th>TELP PEGAWAI</th>
-		    <th>JABATAN ID</th>
-		    <th>STATUS PEGAWAI</th>
+		    <th>Nama Pegawai</th>
+		    <th>Alamat Pegawai</th>
+		    <th>Telp Pegawai</th>
+		    <th>Jabatan Id</th>
+		    <th>Status Pegawai</th>
 		    <th>Action</th>
                 </tr>
             </thead>
@@ -30,18 +30,18 @@
                 ?>
                 <tr>
 		    <td><?php echo ++$start ?></td>
-		    <td><?php echo $pegawai->NAMA_PEGAWAI ?></td>
-		    <td><?php echo $pegawai->ALAMAT_PEGAWAI ?></td>
-		    <td><?php echo $pegawai->TELP_PEGAWAI ?></td>
-		    <td><?php echo $pegawai->JABATAN_ID ?></td>
-		    <td><?php echo $pegawai->STATUS_PEGAWAI ?></td>
+		    <td><?php echo $pegawai->nama_pegawai ?></td>
+		    <td><?php echo $pegawai->alamat_pegawai ?></td>
+		    <td><?php echo $pegawai->telp_pegawai ?></td>
+		    <td><?php echo $pegawai->jabatan_id ?></td>
+		    <td><?php echo $pegawai->status_pegawai ?></td>
 		    <td style="text-align:center" width="140px">
 			<?php 
-			echo anchor(site_url('pegawai/read/'.$pegawai->ID_PEGAWAI),'<i class="fa fa-eye"></i>',array('title'=>'detail','class'=>'btn btn-danger btn-sm')); 
+			echo anchor(site_url('pegawai/read/'.$pegawai->id_pegawai),'<i class="fa fa-eye"></i>',array('title'=>'detail','class'=>'btn btn-danger btn-sm')); 
 			echo '  '; 
-			echo anchor(site_url('pegawai/update/'.$pegawai->ID_PEGAWAI),'<i class="fa fa-pencil-square-o"></i>',array('title'=>'edit','class'=>'btn btn-danger btn-sm')); 
+			echo anchor(site_url('pegawai/update/'.$pegawai->id_pegawai),'<i class="fa fa-pencil-square-o"></i>',array('title'=>'edit','class'=>'btn btn-danger btn-sm')); 
 			echo '  '; 
-			echo anchor(site_url('pegawai/delete/'.$pegawai->ID_PEGAWAI),'<i class="fa fa-trash-o"></i>','title="delete" class="btn btn-danger btn-sm" onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
+			echo anchor(site_url('pegawai/delete/'.$pegawai->id_pegawai),'<i class="fa fa-trash-o"></i>','title="delete" class="btn btn-danger btn-sm" onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
 			?>
 		    </td>
 	        </tr>

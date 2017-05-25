@@ -7,7 +7,7 @@
                 <div class='box-header'>
                 <h3 class='box-title'>Channel Read</h3>
         <table class="table table-bordered">
-	    <tr><td>NAMA CHANNEL</td><td><?php echo $NAMA_CHANNEL; ?></td></tr>
+	    <tr><td>Nama Channel</td><td><?php echo $nama_channel; ?></td></tr>
 	    <tr><td></td><td><a href="<?php echo site_url('channel') ?>" class="btn btn-default">Cancel</a></td></tr>
 	</table>
         </div><!-- /.box-body -->

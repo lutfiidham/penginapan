@@ -20,11 +20,11 @@
         <table class="word-table" style="margin-bottom: 10px">
             <tr>
                 <th>No</th>
-		<th>NAMA PEGAWAI</th>
-		<th>ALAMAT PEGAWAI</th>
-		<th>TELP PEGAWAI</th>
-		<th>JABATAN ID</th>
-		<th>STATUS PEGAWAI</th>
+		<th>Nama Pegawai</th>
+		<th>Alamat Pegawai</th>
+		<th>Telp Pegawai</th>
+		<th>Jabatan Id</th>
+		<th>Status Pegawai</th>
 		
             </tr><?php
             foreach ($pegawai_data as $pegawai)
@@ -32,11 +32,11 @@
                 ?>
                 <tr>
 		      <td><?php echo ++$start ?></td>
-		      <td><?php echo $pegawai->NAMA_PEGAWAI ?></td>
-		      <td><?php echo $pegawai->ALAMAT_PEGAWAI ?></td>
-		      <td><?php echo $pegawai->TELP_PEGAWAI ?></td>
-		      <td><?php echo $pegawai->JABATAN_ID ?></td>
-		      <td><?php echo $pegawai->STATUS_PEGAWAI ?></td>	
+		      <td><?php echo $pegawai->nama_pegawai ?></td>
+		      <td><?php echo $pegawai->alamat_pegawai ?></td>
+		      <td><?php echo $pegawai->telp_pegawai ?></td>
+		      <td><?php echo $pegawai->jabatan_id ?></td>
+		      <td><?php echo $pegawai->status_pegawai ?></td>	
                 </tr>
                 <?php
             }

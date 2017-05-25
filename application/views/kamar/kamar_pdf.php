@@ -20,10 +20,10 @@
         <table class="word-table" style="margin-bottom: 10px">
             <tr>
                 <th>No</th>
-		<th>NAMA KAMAR</th>
-		<th>NO KAMAR</th>
-		<th>KAPASITAS</th>
-		<th>STATUS KAMAR</th>
+		<th>Nama Kamar</th>
+		<th>No Kamar</th>
+		<th>Kapasitas</th>
+		<th>Status Kamar</th>
 		
             </tr><?php
             foreach ($kamar_data as $kamar)
@@ -31,10 +31,10 @@
                 ?>
                 <tr>
 		      <td><?php echo ++$start ?></td>
-		      <td><?php echo $kamar->NAMA_KAMAR ?></td>
-		      <td><?php echo $kamar->NO_KAMAR ?></td>
-		      <td><?php echo $kamar->KAPASITAS ?></td>
-		      <td><?php echo $kamar->STATUS_KAMAR ?></td>	
+		      <td><?php echo $kamar->nama_kamar ?></td>
+		      <td><?php echo $kamar->no_kamar ?></td>
+		      <td><?php echo $kamar->kapasitas ?></td>
+		      <td><?php echo $kamar->status_kamar ?></td>	
                 </tr>
                 <?php
             }

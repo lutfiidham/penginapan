@@ -30,9 +30,9 @@ class Fasilitas extends CI_Controller
         $row = $this->Fasilitas_model->get_by_id($id);
         if ($row) {
             $data = array(
-		'ID_FASILITAS' => $row->ID_FASILITAS,
-		'NAMA_FASILITAS' => $row->NAMA_FASILITAS,
-		'STATUS_FASILITAS' => $row->STATUS_FASILITAS,
+		'id_fasilitas' => $row->id_fasilitas,
+		'nama_fasilitas' => $row->nama_fasilitas,
+		'status_fasilitas' => $row->status_fasilitas,
 	    );
             $this->template->load('template','fasilitas_read', $data);
         } else {
@@ -46,9 +46,9 @@ class Fasilitas extends CI_Controller
         $data = array(
             'button' => 'Create',
             'action' => site_url('fasilitas/create_action'),
-	    'ID_FASILITAS' => set_value('ID_FASILITAS'),
-	    'NAMA_FASILITAS' => set_value('NAMA_FASILITAS'),
-	    'STATUS_FASILITAS' => set_value('STATUS_FASILITAS'),
+	    'id_fasilitas' => set_value('id_fasilitas'),
+	    'nama_fasilitas' => set_value('nama_fasilitas'),
+	    'status_fasilitas' => set_value('status_fasilitas'),
 	);
         $this->template->load('template','fasilitas_form', $data);
     }
@@ -61,8 +61,8 @@ class Fasilitas extends CI_Controller
             $this->create();
         } else {
             $data = array(
-		'NAMA_FASILITAS' => $this->input->post('NAMA_FASILITAS',TRUE),
-		'STATUS_FASILITAS' => $this->input->post('STATUS_FASILITAS',TRUE),
+		'nama_fasilitas' => $this->input->post('nama_fasilitas',TRUE),
+		'status_fasilitas' => $this->input->post('status_fasilitas',TRUE),
 	    );
 
             $this->Fasilitas_model->insert($data);
@@ -79,9 +79,9 @@ class Fasilitas extends CI_Controller
             $data = array(
                 'button' => 'Update',
                 'action' => site_url('fasilitas/update_action'),
-		'ID_FASILITAS' => set_value('ID_FASILITAS', $row->ID_FASILITAS),
-		'NAMA_FASILITAS' => set_value('NAMA_FASILITAS', $row->NAMA_FASILITAS),
-		'STATUS_FASILITAS' => set_value('STATUS_FASILITAS', $row->STATUS_FASILITAS),
+		'id_fasilitas' => set_value('id_fasilitas', $row->id_fasilitas),
+		'nama_fasilitas' => set_value('nama_fasilitas', $row->nama_fasilitas),
+		'status_fasilitas' => set_value('status_fasilitas', $row->status_fasilitas),
 	    );
             $this->template->load('template','fasilitas_form', $data);
         } else {
@@ -95,14 +95,14 @@ class Fasilitas extends CI_Controller
         $this->_rules();
 
         if ($this->form_validation->run() == FALSE) {
-            $this->update($this->input->post('ID_FASILITAS', TRUE));
+            $this->update($this->input->post('id_fasilitas', TRUE));
         } else {
             $data = array(
-		'NAMA_FASILITAS' => $this->input->post('NAMA_FASILITAS',TRUE),
-		'STATUS_FASILITAS' => $this->input->post('STATUS_FASILITAS',TRUE),
+		'nama_fasilitas' => $this->input->post('nama_fasilitas',TRUE),
+		'status_fasilitas' => $this->input->post('status_fasilitas',TRUE),
 	    );
 
-            $this->Fasilitas_model->update($this->input->post('ID_FASILITAS', TRUE), $data);
+            $this->Fasilitas_model->update($this->input->post('id_fasilitas', TRUE), $data);
             $this->session->set_flashdata('message', 'Update Record Success');
             redirect(site_url('fasilitas'));
         }
@@ -124,10 +124,10 @@ class Fasilitas extends CI_Controller
 
     public function _rules() 
     {
-	$this->form_validation->set_rules('NAMA_FASILITAS', 'nama fasilitas', 'trim|required');
-	$this->form_validation->set_rules('STATUS_FASILITAS', 'status fasilitas', 'trim|required');
+	$this->form_validation->set_rules('nama_fasilitas', 'nama fasilitas', 'trim|required');
+	$this->form_validation->set_rules('status_fasilitas', 'status fasilitas', 'trim|required');
 
-	$this->form_validation->set_rules('ID_FASILITAS', 'ID_FASILITAS', 'trim');
+	$this->form_validation->set_rules('id_fasilitas', 'id_fasilitas', 'trim');
 	$this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
     }
 
@@ -153,16 +153,16 @@ class Fasilitas extends CI_Controller
 
         $kolomhead = 0;
         xlsWriteLabel($tablehead, $kolomhead++, "No");
-	xlsWriteLabel($tablehead, $kolomhead++, "NAMA FASILITAS");
-	xlsWriteLabel($tablehead, $kolomhead++, "STATUS FASILITAS");
+	xlsWriteLabel($tablehead, $kolomhead++, "Nama Fasilitas");
+	xlsWriteLabel($tablehead, $kolomhead++, "Status Fasilitas");
 
 	foreach ($this->Fasilitas_model->get_all() as $data) {
             $kolombody = 0;
 
             //ubah xlsWriteLabel menjadi xlsWriteNumber untuk kolom numeric
             xlsWriteNumber($tablebody, $kolombody++, $nourut);
-	    xlsWriteLabel($tablebody, $kolombody++, $data->NAMA_FASILITAS);
-	    xlsWriteLabel($tablebody, $kolombody++, $data->STATUS_FASILITAS);
+	    xlsWriteLabel($tablebody, $kolombody++, $data->nama_fasilitas);
+	    xlsWriteLabel($tablebody, $kolombody++, $data->status_fasilitas);
 
 	    $tablebody++;
             $nourut++;
@@ -192,5 +192,5 @@ class Fasilitas extends CI_Controller
 /* End of file Fasilitas.php */
 /* Location: ./application/controllers/Fasilitas.php */
 /* Please DO NOT modify this information : */
-/* Generated by Harviacode Codeigniter CRUD Generator 2017-05-23 18:30:25 */
+/* Generated by Harviacode Codeigniter CRUD Generator 2017-05-25 19:35:04 */
 /* http://harviacode.com */

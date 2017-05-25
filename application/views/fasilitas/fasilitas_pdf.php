@@ -20,8 +20,8 @@
         <table class="word-table" style="margin-bottom: 10px">
             <tr>
                 <th>No</th>
-		<th>NAMA FASILITAS</th>
-		<th>STATUS FASILITAS</th>
+		<th>Nama Fasilitas</th>
+		<th>Status Fasilitas</th>
 		
             </tr><?php
             foreach ($fasilitas_data as $fasilitas)
@@ -29,8 +29,8 @@
                 ?>
                 <tr>
 		      <td><?php echo ++$start ?></td>
-		      <td><?php echo $fasilitas->NAMA_FASILITAS ?></td>
-		      <td><?php echo $fasilitas->STATUS_FASILITAS ?></td>	
+		      <td><?php echo $fasilitas->nama_fasilitas ?></td>
+		      <td><?php echo $fasilitas->status_fasilitas ?></td>	
                 </tr>
                 <?php
             }

@@ -8,13 +8,13 @@
                   <h3 class='box-title'>DETIL_INVENTORI</h3>
                       <div class='box box-primary'>
         <form action="<?php echo $action; ?>" method="post"><table class='table table-bordered'>
-	    <tr><td>KAMAR ID <?php echo form_error('KAMAR_ID') ?></td>
-            <td><input type="text" class="form-control" name="KAMAR_ID" id="KAMAR_ID" placeholder="KAMAR ID" value="<?php echo $KAMAR_ID; ?>" />
+	    <tr><td>Kamar Id <?php echo form_error('kamar_id') ?></td>
+            <td><input type="text" class="form-control" name="kamar_id" id="kamar_id" placeholder="Kamar Id" value="<?php echo $kamar_id; ?>" />
         </td>
-	    <tr><td>INVENTORI ID <?php echo form_error('INVENTORI_ID') ?></td>
-            <td><input type="text" class="form-control" name="INVENTORI_ID" id="INVENTORI_ID" placeholder="INVENTORI ID" value="<?php echo $INVENTORI_ID; ?>" />
+	    <tr><td>Inventori Id <?php echo form_error('inventori_id') ?></td>
+            <td><input type="text" class="form-control" name="inventori_id" id="inventori_id" placeholder="Inventori Id" value="<?php echo $inventori_id; ?>" />
         </td>
-	    <input type="hidden" name="ID_DETIL_INVENTORI" value="<?php echo $ID_DETIL_INVENTORI; ?>" /> 
+	    <input type="hidden" name="id_detil_inventori" value="<?php echo $id_detil_inventori; ?>" /> 
 	    <tr><td colspan='2'><button type="submit" class="btn btn-primary"><?php echo $button ?></button> 
 	    <a href="<?php echo site_url('detil_inventori') ?>" class="btn btn-default">Cancel</a></td></tr>
 	

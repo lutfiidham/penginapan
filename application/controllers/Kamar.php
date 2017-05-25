@@ -30,11 +30,11 @@ class Kamar extends CI_Controller
         $row = $this->Kamar_model->get_by_id($id);
         if ($row) {
             $data = array(
-		'ID_KAMAR' => $row->ID_KAMAR,
-		'NAMA_KAMAR' => $row->NAMA_KAMAR,
-		'NO_KAMAR' => $row->NO_KAMAR,
-		'KAPASITAS' => $row->KAPASITAS,
-		'STATUS_KAMAR' => $row->STATUS_KAMAR,
+		'id_kamar' => $row->id_kamar,
+		'nama_kamar' => $row->nama_kamar,
+		'no_kamar' => $row->no_kamar,
+		'kapasitas' => $row->kapasitas,
+		'status_kamar' => $row->status_kamar,
 	    );
             $this->template->load('template','kamar_read', $data);
         } else {
@@ -48,11 +48,11 @@ class Kamar extends CI_Controller
         $data = array(
             'button' => 'Create',
             'action' => site_url('kamar/create_action'),
-	    'ID_KAMAR' => set_value('ID_KAMAR'),
-	    'NAMA_KAMAR' => set_value('NAMA_KAMAR'),
-	    'NO_KAMAR' => set_value('NO_KAMAR'),
-	    'KAPASITAS' => set_value('KAPASITAS'),
-	    'STATUS_KAMAR' => set_value('STATUS_KAMAR'),
+	    'id_kamar' => set_value('id_kamar'),
+	    'nama_kamar' => set_value('nama_kamar'),
+	    'no_kamar' => set_value('no_kamar'),
+	    'kapasitas' => set_value('kapasitas'),
+	    'status_kamar' => set_value('status_kamar'),
 	);
         $this->template->load('template','kamar_form', $data);
     }
@@ -65,10 +65,10 @@ class Kamar extends CI_Controller
             $this->create();
         } else {
             $data = array(
-		'NAMA_KAMAR' => $this->input->post('NAMA_KAMAR',TRUE),
-		'NO_KAMAR' => $this->input->post('NO_KAMAR',TRUE),
-		'KAPASITAS' => $this->input->post('KAPASITAS',TRUE),
-		'STATUS_KAMAR' => $this->input->post('STATUS_KAMAR',TRUE),
+		'nama_kamar' => $this->input->post('nama_kamar',TRUE),
+		'no_kamar' => $this->input->post('no_kamar',TRUE),
+		'kapasitas' => $this->input->post('kapasitas',TRUE),
+		'status_kamar' => $this->input->post('status_kamar',TRUE),
 	    );
 
             $this->Kamar_model->insert($data);
@@ -85,11 +85,11 @@ class Kamar extends CI_Controller
             $data = array(
                 'button' => 'Update',
                 'action' => site_url('kamar/update_action'),
-		'ID_KAMAR' => set_value('ID_KAMAR', $row->ID_KAMAR),
-		'NAMA_KAMAR' => set_value('NAMA_KAMAR', $row->NAMA_KAMAR),
-		'NO_KAMAR' => set_value('NO_KAMAR', $row->NO_KAMAR),
-		'KAPASITAS' => set_value('KAPASITAS', $row->KAPASITAS),
-		'STATUS_KAMAR' => set_value('STATUS_KAMAR', $row->STATUS_KAMAR),
+		'id_kamar' => set_value('id_kamar', $row->id_kamar),
+		'nama_kamar' => set_value('nama_kamar', $row->nama_kamar),
+		'no_kamar' => set_value('no_kamar', $row->no_kamar),
+		'kapasitas' => set_value('kapasitas', $row->kapasitas),
+		'status_kamar' => set_value('status_kamar', $row->status_kamar),
 	    );
             $this->template->load('template','kamar_form', $data);
         } else {
@@ -103,16 +103,16 @@ class Kamar extends CI_Controller
         $this->_rules();
 
         if ($this->form_validation->run() == FALSE) {
-            $this->update($this->input->post('ID_KAMAR', TRUE));
+            $this->update($this->input->post('id_kamar', TRUE));
         } else {
             $data = array(
-		'NAMA_KAMAR' => $this->input->post('NAMA_KAMAR',TRUE),
-		'NO_KAMAR' => $this->input->post('NO_KAMAR',TRUE),
-		'KAPASITAS' => $this->input->post('KAPASITAS',TRUE),
-		'STATUS_KAMAR' => $this->input->post('STATUS_KAMAR',TRUE),
+		'nama_kamar' => $this->input->post('nama_kamar',TRUE),
+		'no_kamar' => $this->input->post('no_kamar',TRUE),
+		'kapasitas' => $this->input->post('kapasitas',TRUE),
+		'status_kamar' => $this->input->post('status_kamar',TRUE),
 	    );
 
-            $this->Kamar_model->update($this->input->post('ID_KAMAR', TRUE), $data);
+            $this->Kamar_model->update($this->input->post('id_kamar', TRUE), $data);
             $this->session->set_flashdata('message', 'Update Record Success');
             redirect(site_url('kamar'));
         }
@@ -134,12 +134,12 @@ class Kamar extends CI_Controller
 
     public function _rules() 
     {
-	$this->form_validation->set_rules('NAMA_KAMAR', 'nama kamar', 'trim|required');
-	$this->form_validation->set_rules('NO_KAMAR', 'no kamar', 'trim|required');
-	$this->form_validation->set_rules('KAPASITAS', 'kapasitas', 'trim|required');
-	$this->form_validation->set_rules('STATUS_KAMAR', 'status kamar', 'trim|required');
+	$this->form_validation->set_rules('nama_kamar', 'nama kamar', 'trim|required');
+	$this->form_validation->set_rules('no_kamar', 'no kamar', 'trim|required');
+	$this->form_validation->set_rules('kapasitas', 'kapasitas', 'trim|required');
+	$this->form_validation->set_rules('status_kamar', 'status kamar', 'trim|required');
 
-	$this->form_validation->set_rules('ID_KAMAR', 'ID_KAMAR', 'trim');
+	$this->form_validation->set_rules('id_kamar', 'id_kamar', 'trim');
 	$this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
     }
 
@@ -165,20 +165,20 @@ class Kamar extends CI_Controller
 
         $kolomhead = 0;
         xlsWriteLabel($tablehead, $kolomhead++, "No");
-	xlsWriteLabel($tablehead, $kolomhead++, "NAMA KAMAR");
-	xlsWriteLabel($tablehead, $kolomhead++, "NO KAMAR");
-	xlsWriteLabel($tablehead, $kolomhead++, "KAPASITAS");
-	xlsWriteLabel($tablehead, $kolomhead++, "STATUS KAMAR");
+	xlsWriteLabel($tablehead, $kolomhead++, "Nama Kamar");
+	xlsWriteLabel($tablehead, $kolomhead++, "No Kamar");
+	xlsWriteLabel($tablehead, $kolomhead++, "Kapasitas");
+	xlsWriteLabel($tablehead, $kolomhead++, "Status Kamar");
 
 	foreach ($this->Kamar_model->get_all() as $data) {
             $kolombody = 0;
 
             //ubah xlsWriteLabel menjadi xlsWriteNumber untuk kolom numeric
             xlsWriteNumber($tablebody, $kolombody++, $nourut);
-	    xlsWriteLabel($tablebody, $kolombody++, $data->NAMA_KAMAR);
-	    xlsWriteLabel($tablebody, $kolombody++, $data->NO_KAMAR);
-	    xlsWriteNumber($tablebody, $kolombody++, $data->KAPASITAS);
-	    xlsWriteLabel($tablebody, $kolombody++, $data->STATUS_KAMAR);
+	    xlsWriteLabel($tablebody, $kolombody++, $data->nama_kamar);
+	    xlsWriteLabel($tablebody, $kolombody++, $data->no_kamar);
+	    xlsWriteNumber($tablebody, $kolombody++, $data->kapasitas);
+	    xlsWriteLabel($tablebody, $kolombody++, $data->status_kamar);
 
 	    $tablebody++;
             $nourut++;
@@ -208,5 +208,5 @@ class Kamar extends CI_Controller
 /* End of file Kamar.php */
 /* Location: ./application/controllers/Kamar.php */
 /* Please DO NOT modify this information : */
-/* Generated by Harviacode Codeigniter CRUD Generator 2017-05-23 18:30:25 */
+/* Generated by Harviacode Codeigniter CRUD Generator 2017-05-25 19:35:04 */
 /* http://harviacode.com */

@@ -20,7 +20,7 @@
         <table class="word-table" style="margin-bottom: 10px">
             <tr>
                 <th>No</th>
-		<th>NAMA CHANNEL</th>
+		<th>Nama Channel</th>
 		
             </tr><?php
             foreach ($channel_data as $channel)
@@ -28,7 +28,7 @@
                 ?>
                 <tr>
 		      <td><?php echo ++$start ?></td>
-		      <td><?php echo $channel->NAMA_CHANNEL ?></td>	
+		      <td><?php echo $channel->nama_channel ?></td>	
                 </tr>
                 <?php
             }

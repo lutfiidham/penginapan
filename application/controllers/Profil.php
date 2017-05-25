@@ -22,7 +22,7 @@ class Profil extends CI_Controller
             'profil_data' => $profil
         );
 
-        $this->template->load('template','profil/profil_list', $data);
+        $this->template->load('template','profil_list', $data);
     }
 
     public function read($id) 
@@ -30,12 +30,12 @@ class Profil extends CI_Controller
         $row = $this->Profil_model->get_by_id($id);
         if ($row) {
             $data = array(
-		'ID_PROFIL' => $row->ID_PROFIL,
-		'NAMA' => $row->NAMA,
-		'ALAMAT' => $row->ALAMAT,
-		'TELP' => $row->TELP,
+		'id_profil' => $row->id_profil,
+		'nama' => $row->nama,
+		'alamat' => $row->alamat,
+		'telp' => $row->telp,
 	    );
-            $this->template->load('template','profil/profil_read', $data);
+            $this->template->load('template','profil_read', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('profil'));
@@ -47,12 +47,12 @@ class Profil extends CI_Controller
         $data = array(
             'button' => 'Create',
             'action' => site_url('profil/create_action'),
-	    'ID_PROFIL' => set_value('ID_PROFIL'),
-	    'NAMA' => set_value('NAMA'),
-	    'ALAMAT' => set_value('ALAMAT'),
-	    'TELP' => set_value('TELP'),
+	    'id_profil' => set_value('id_profil'),
+	    'nama' => set_value('nama'),
+	    'alamat' => set_value('alamat'),
+	    'telp' => set_value('telp'),
 	);
-        $this->template->load('template','profil/profil_form', $data);
+        $this->template->load('template','profil_form', $data);
     }
     
     public function create_action() 
@@ -63,9 +63,9 @@ class Profil extends CI_Controller
             $this->create();
         } else {
             $data = array(
-		'NAMA' => $this->input->post('NAMA',TRUE),
-		'ALAMAT' => $this->input->post('ALAMAT',TRUE),
-		'TELP' => $this->input->post('TELP',TRUE),
+		'nama' => $this->input->post('nama',TRUE),
+		'alamat' => $this->input->post('alamat',TRUE),
+		'telp' => $this->input->post('telp',TRUE),
 	    );
 
             $this->Profil_model->insert($data);
@@ -82,12 +82,12 @@ class Profil extends CI_Controller
             $data = array(
                 'button' => 'Update',
                 'action' => site_url('profil/update_action'),
-		'ID_PROFIL' => set_value('ID_PROFIL', $row->ID_PROFIL),
-		'NAMA' => set_value('NAMA', $row->NAMA),
-		'ALAMAT' => set_value('ALAMAT', $row->ALAMAT),
-		'TELP' => set_value('TELP', $row->TELP),
+		'id_profil' => set_value('id_profil', $row->id_profil),
+		'nama' => set_value('nama', $row->nama),
+		'alamat' => set_value('alamat', $row->alamat),
+		'telp' => set_value('telp', $row->telp),
 	    );
-            $this->template->load('template','profil/profil_form', $data);
+            $this->template->load('template','profil_form', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('profil'));
@@ -99,15 +99,15 @@ class Profil extends CI_Controller
         $this->_rules();
 
         if ($this->form_validation->run() == FALSE) {
-            $this->update($this->input->post('ID_PROFIL', TRUE));
+            $this->update($this->input->post('id_profil', TRUE));
         } else {
             $data = array(
-		'NAMA' => $this->input->post('NAMA',TRUE),
-		'ALAMAT' => $this->input->post('ALAMAT',TRUE),
-		'TELP' => $this->input->post('TELP',TRUE),
+		'nama' => $this->input->post('nama',TRUE),
+		'alamat' => $this->input->post('alamat',TRUE),
+		'telp' => $this->input->post('telp',TRUE),
 	    );
 
-            $this->Profil_model->update($this->input->post('ID_PROFIL', TRUE), $data);
+            $this->Profil_model->update($this->input->post('id_profil', TRUE), $data);
             $this->session->set_flashdata('message', 'Update Record Success');
             redirect(site_url('profil'));
         }
@@ -129,11 +129,11 @@ class Profil extends CI_Controller
 
     public function _rules() 
     {
-	$this->form_validation->set_rules('NAMA', 'nama', 'trim|required');
-	$this->form_validation->set_rules('ALAMAT', 'alamat', 'trim|required');
-	$this->form_validation->set_rules('TELP', 'telp', 'trim|required');
+	$this->form_validation->set_rules('nama', 'nama', 'trim|required');
+	$this->form_validation->set_rules('alamat', 'alamat', 'trim|required');
+	$this->form_validation->set_rules('telp', 'telp', 'trim|required');
 
-	$this->form_validation->set_rules('ID_PROFIL', 'ID_PROFIL', 'trim');
+	$this->form_validation->set_rules('id_profil', 'id_profil', 'trim');
 	$this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
     }
 
@@ -159,18 +159,18 @@ class Profil extends CI_Controller
 
         $kolomhead = 0;
         xlsWriteLabel($tablehead, $kolomhead++, "No");
-	xlsWriteLabel($tablehead, $kolomhead++, "NAMA");
-	xlsWriteLabel($tablehead, $kolomhead++, "ALAMAT");
-	xlsWriteLabel($tablehead, $kolomhead++, "TELP");
+	xlsWriteLabel($tablehead, $kolomhead++, "Nama");
+	xlsWriteLabel($tablehead, $kolomhead++, "Alamat");
+	xlsWriteLabel($tablehead, $kolomhead++, "Telp");
 
 	foreach ($this->Profil_model->get_all() as $data) {
             $kolombody = 0;
 
             //ubah xlsWriteLabel menjadi xlsWriteNumber untuk kolom numeric
             xlsWriteNumber($tablebody, $kolombody++, $nourut);
-	    xlsWriteLabel($tablebody, $kolombody++, $data->NAMA);
-	    xlsWriteLabel($tablebody, $kolombody++, $data->ALAMAT);
-	    xlsWriteLabel($tablebody, $kolombody++, $data->TELP);
+	    xlsWriteLabel($tablebody, $kolombody++, $data->nama);
+	    xlsWriteLabel($tablebody, $kolombody++, $data->alamat);
+	    xlsWriteLabel($tablebody, $kolombody++, $data->telp);
 
 	    $tablebody++;
             $nourut++;
@@ -188,7 +188,7 @@ class Profil extends CI_Controller
         );
         
         ini_set('memory_limit', '32M');
-        $html = $this->load->view('profil/profil_pdf', $data, true);
+        $html = $this->load->view('profil_pdf', $data, true);
         $this->load->library('pdf');
         $pdf = $this->pdf->load();
         $pdf->WriteHTML($html);
@@ -200,5 +200,5 @@ class Profil extends CI_Controller
 /* End of file Profil.php */
 /* Location: ./application/controllers/Profil.php */
 /* Please DO NOT modify this information : */
-/* Generated by Harviacode Codeigniter CRUD Generator 2017-05-23 18:30:25 */
+/* Generated by Harviacode Codeigniter CRUD Generator 2017-05-25 19:35:04 */
 /* http://harviacode.com */

@@ -14,8 +14,8 @@
             <thead>
                 <tr>
                     <th width="80px">No</th>
-		    <th>NAMA FASILITAS</th>
-		    <th>STATUS FASILITAS</th>
+		    <th>Nama Fasilitas</th>
+		    <th>Status Fasilitas</th>
 		    <th>Action</th>
                 </tr>
             </thead>
@@ -27,15 +27,15 @@
                 ?>
                 <tr>
 		    <td><?php echo ++$start ?></td>
-		    <td><?php echo $fasilitas->NAMA_FASILITAS ?></td>
-		    <td><?php echo $fasilitas->STATUS_FASILITAS ?></td>
+		    <td><?php echo $fasilitas->nama_fasilitas ?></td>
+		    <td><?php echo $fasilitas->status_fasilitas ?></td>
 		    <td style="text-align:center" width="140px">
 			<?php 
-			echo anchor(site_url('fasilitas/read/'.$fasilitas->ID_FASILITAS),'<i class="fa fa-eye"></i>',array('title'=>'detail','class'=>'btn btn-danger btn-sm')); 
+			echo anchor(site_url('fasilitas/read/'.$fasilitas->id_fasilitas),'<i class="fa fa-eye"></i>',array('title'=>'detail','class'=>'btn btn-danger btn-sm')); 
 			echo '  '; 
-			echo anchor(site_url('fasilitas/update/'.$fasilitas->ID_FASILITAS),'<i class="fa fa-pencil-square-o"></i>',array('title'=>'edit','class'=>'btn btn-danger btn-sm')); 
+			echo anchor(site_url('fasilitas/update/'.$fasilitas->id_fasilitas),'<i class="fa fa-pencil-square-o"></i>',array('title'=>'edit','class'=>'btn btn-danger btn-sm')); 
 			echo '  '; 
-			echo anchor(site_url('fasilitas/delete/'.$fasilitas->ID_FASILITAS),'<i class="fa fa-trash-o"></i>','title="delete" class="btn btn-danger btn-sm" onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
+			echo anchor(site_url('fasilitas/delete/'.$fasilitas->id_fasilitas),'<i class="fa fa-trash-o"></i>','title="delete" class="btn btn-danger btn-sm" onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
 			?>
 		    </td>
 	        </tr>

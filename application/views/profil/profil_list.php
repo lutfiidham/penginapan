@@ -14,9 +14,9 @@
             <thead>
                 <tr>
                     <th width="80px">No</th>
-		    <th>NAMA</th>
-		    <th>ALAMAT</th>
-		    <th>TELP</th>
+		    <th>Nama</th>
+		    <th>Alamat</th>
+		    <th>Telp</th>
 		    <th>Action</th>
                 </tr>
             </thead>
@@ -28,16 +28,16 @@
                 ?>
                 <tr>
 		    <td><?php echo ++$start ?></td>
-		    <td><?php echo $profil->NAMA ?></td>
-		    <td><?php echo $profil->ALAMAT ?></td>
-		    <td><?php echo $profil->TELP ?></td>
+		    <td><?php echo $profil->nama ?></td>
+		    <td><?php echo $profil->alamat ?></td>
+		    <td><?php echo $profil->telp ?></td>
 		    <td style="text-align:center" width="140px">
 			<?php 
-			echo anchor(site_url('profil/read/'.$profil->ID_PROFIL),'<i class="fa fa-eye"></i>',array('title'=>'detail','class'=>'btn btn-danger btn-sm')); 
+			echo anchor(site_url('profil/read/'.$profil->id_profil),'<i class="fa fa-eye"></i>',array('title'=>'detail','class'=>'btn btn-danger btn-sm')); 
 			echo '  '; 
-			echo anchor(site_url('profil/update/'.$profil->ID_PROFIL),'<i class="fa fa-pencil-square-o"></i>',array('title'=>'edit','class'=>'btn btn-danger btn-sm')); 
+			echo anchor(site_url('profil/update/'.$profil->id_profil),'<i class="fa fa-pencil-square-o"></i>',array('title'=>'edit','class'=>'btn btn-danger btn-sm')); 
 			echo '  '; 
-			echo anchor(site_url('profil/delete/'.$profil->ID_PROFIL),'<i class="fa fa-trash-o"></i>','title="delete" class="btn btn-danger btn-sm" onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
+			echo anchor(site_url('profil/delete/'.$profil->id_profil),'<i class="fa fa-trash-o"></i>','title="delete" class="btn btn-danger btn-sm" onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
 			?>
 		    </td>
 	        </tr>

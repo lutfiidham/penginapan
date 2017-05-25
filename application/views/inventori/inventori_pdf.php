@@ -20,8 +20,8 @@
         <table class="word-table" style="margin-bottom: 10px">
             <tr>
                 <th>No</th>
-		<th>NAMA INVENTORI</th>
-		<th>HARGA INVENTORI</th>
+		<th>Nama Inventori</th>
+		<th>Harga Inventori</th>
 		
             </tr><?php
             foreach ($inventori_data as $inventori)
@@ -29,8 +29,8 @@
                 ?>
                 <tr>
 		      <td><?php echo ++$start ?></td>
-		      <td><?php echo $inventori->NAMA_INVENTORI ?></td>
-		      <td><?php echo $inventori->HARGA_INVENTORI ?></td>	
+		      <td><?php echo $inventori->nama_inventori ?></td>
+		      <td><?php echo $inventori->harga_inventori ?></td>	
                 </tr>
                 <?php
             }

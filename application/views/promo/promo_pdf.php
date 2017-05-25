@@ -20,10 +20,10 @@
         <table class="word-table" style="margin-bottom: 10px">
             <tr>
                 <th>No</th>
-		<th>PROMO AWAL</th>
-		<th>PROMO AKHIR</th>
-		<th>HARGA PROMO</th>
-		<th>KETERANGAN PROMO</th>
+		<th>Promo Awal</th>
+		<th>Promo Akhir</th>
+		<th>Harga Promo</th>
+		<th>Keterangan Promo</th>
 		
             </tr><?php
             foreach ($promo_data as $promo)
@@ -31,10 +31,10 @@
                 ?>
                 <tr>
 		      <td><?php echo ++$start ?></td>
-		      <td><?php echo $promo->PROMO_AWAL ?></td>
-		      <td><?php echo $promo->PROMO_AKHIR ?></td>
-		      <td><?php echo $promo->HARGA_PROMO ?></td>
-		      <td><?php echo $promo->KETERANGAN_PROMO ?></td>	
+		      <td><?php echo $promo->promo_awal ?></td>
+		      <td><?php echo $promo->promo_akhir ?></td>
+		      <td><?php echo $promo->harga_promo ?></td>
+		      <td><?php echo $promo->keterangan_promo ?></td>	
                 </tr>
                 <?php
             }

@@ -30,9 +30,9 @@ class Detil_inventori extends CI_Controller
         $row = $this->Detil_inventori_model->get_by_id($id);
         if ($row) {
             $data = array(
-		'ID_DETIL_INVENTORI' => $row->ID_DETIL_INVENTORI,
-		'KAMAR_ID' => $row->KAMAR_ID,
-		'INVENTORI_ID' => $row->INVENTORI_ID,
+		'id_detil_inventori' => $row->id_detil_inventori,
+		'kamar_id' => $row->kamar_id,
+		'inventori_id' => $row->inventori_id,
 	    );
             $this->template->load('template','detil_inventori_read', $data);
         } else {
@@ -46,9 +46,9 @@ class Detil_inventori extends CI_Controller
         $data = array(
             'button' => 'Create',
             'action' => site_url('detil_inventori/create_action'),
-	    'ID_DETIL_INVENTORI' => set_value('ID_DETIL_INVENTORI'),
-	    'KAMAR_ID' => set_value('KAMAR_ID'),
-	    'INVENTORI_ID' => set_value('INVENTORI_ID'),
+	    'id_detil_inventori' => set_value('id_detil_inventori'),
+	    'kamar_id' => set_value('kamar_id'),
+	    'inventori_id' => set_value('inventori_id'),
 	);
         $this->template->load('template','detil_inventori_form', $data);
     }
@@ -61,8 +61,8 @@ class Detil_inventori extends CI_Controller
             $this->create();
         } else {
             $data = array(
-		'KAMAR_ID' => $this->input->post('KAMAR_ID',TRUE),
-		'INVENTORI_ID' => $this->input->post('INVENTORI_ID',TRUE),
+		'kamar_id' => $this->input->post('kamar_id',TRUE),
+		'inventori_id' => $this->input->post('inventori_id',TRUE),
 	    );
 
             $this->Detil_inventori_model->insert($data);
@@ -79,9 +79,9 @@ class Detil_inventori extends CI_Controller
             $data = array(
                 'button' => 'Update',
                 'action' => site_url('detil_inventori/update_action'),
-		'ID_DETIL_INVENTORI' => set_value('ID_DETIL_INVENTORI', $row->ID_DETIL_INVENTORI),
-		'KAMAR_ID' => set_value('KAMAR_ID', $row->KAMAR_ID),
-		'INVENTORI_ID' => set_value('INVENTORI_ID', $row->INVENTORI_ID),
+		'id_detil_inventori' => set_value('id_detil_inventori', $row->id_detil_inventori),
+		'kamar_id' => set_value('kamar_id', $row->kamar_id),
+		'inventori_id' => set_value('inventori_id', $row->inventori_id),
 	    );
             $this->template->load('template','detil_inventori_form', $data);
         } else {
@@ -95,14 +95,14 @@ class Detil_inventori extends CI_Controller
         $this->_rules();
 
         if ($this->form_validation->run() == FALSE) {
-            $this->update($this->input->post('ID_DETIL_INVENTORI', TRUE));
+            $this->update($this->input->post('id_detil_inventori', TRUE));
         } else {
             $data = array(
-		'KAMAR_ID' => $this->input->post('KAMAR_ID',TRUE),
-		'INVENTORI_ID' => $this->input->post('INVENTORI_ID',TRUE),
+		'kamar_id' => $this->input->post('kamar_id',TRUE),
+		'inventori_id' => $this->input->post('inventori_id',TRUE),
 	    );
 
-            $this->Detil_inventori_model->update($this->input->post('ID_DETIL_INVENTORI', TRUE), $data);
+            $this->Detil_inventori_model->update($this->input->post('id_detil_inventori', TRUE), $data);
             $this->session->set_flashdata('message', 'Update Record Success');
             redirect(site_url('detil_inventori'));
         }
@@ -124,10 +124,10 @@ class Detil_inventori extends CI_Controller
 
     public function _rules() 
     {
-	$this->form_validation->set_rules('KAMAR_ID', 'kamar id', 'trim|required');
-	$this->form_validation->set_rules('INVENTORI_ID', 'inventori id', 'trim|required');
+	$this->form_validation->set_rules('kamar_id', 'kamar id', 'trim|required');
+	$this->form_validation->set_rules('inventori_id', 'inventori id', 'trim|required');
 
-	$this->form_validation->set_rules('ID_DETIL_INVENTORI', 'ID_DETIL_INVENTORI', 'trim');
+	$this->form_validation->set_rules('id_detil_inventori', 'id_detil_inventori', 'trim');
 	$this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
     }
 
@@ -153,16 +153,16 @@ class Detil_inventori extends CI_Controller
 
         $kolomhead = 0;
         xlsWriteLabel($tablehead, $kolomhead++, "No");
-	xlsWriteLabel($tablehead, $kolomhead++, "KAMAR ID");
-	xlsWriteLabel($tablehead, $kolomhead++, "INVENTORI ID");
+	xlsWriteLabel($tablehead, $kolomhead++, "Kamar Id");
+	xlsWriteLabel($tablehead, $kolomhead++, "Inventori Id");
 
 	foreach ($this->Detil_inventori_model->get_all() as $data) {
             $kolombody = 0;
 
             //ubah xlsWriteLabel menjadi xlsWriteNumber untuk kolom numeric
             xlsWriteNumber($tablebody, $kolombody++, $nourut);
-	    xlsWriteLabel($tablebody, $kolombody++, $data->KAMAR_ID);
-	    xlsWriteLabel($tablebody, $kolombody++, $data->INVENTORI_ID);
+	    xlsWriteLabel($tablebody, $kolombody++, $data->kamar_id);
+	    xlsWriteLabel($tablebody, $kolombody++, $data->inventori_id);
 
 	    $tablebody++;
             $nourut++;
@@ -192,5 +192,5 @@ class Detil_inventori extends CI_Controller
 /* End of file Detil_inventori.php */
 /* Location: ./application/controllers/Detil_inventori.php */
 /* Please DO NOT modify this information : */
-/* Generated by Harviacode Codeigniter CRUD Generator 2017-05-23 18:30:25 */
+/* Generated by Harviacode Codeigniter CRUD Generator 2017-05-25 19:35:04 */
 /* http://harviacode.com */

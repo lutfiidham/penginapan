@@ -14,8 +14,8 @@
             <thead>
                 <tr>
                     <th width="80px">No</th>
-		    <th>KAMAR ID</th>
-		    <th>FASILITAS ID</th>
+		    <th>Kamar Id</th>
+		    <th>Fasilitas Id</th>
 		    <th>Action</th>
                 </tr>
             </thead>
@@ -27,15 +27,15 @@
                 ?>
                 <tr>
 		    <td><?php echo ++$start ?></td>
-		    <td><?php echo $detil_fasilitas->KAMAR_ID ?></td>
-		    <td><?php echo $detil_fasilitas->FASILITAS_ID ?></td>
+		    <td><?php echo $detil_fasilitas->kamar_id ?></td>
+		    <td><?php echo $detil_fasilitas->fasilitas_id ?></td>
 		    <td style="text-align:center" width="140px">
 			<?php 
-			echo anchor(site_url('detil_fasilitas/read/'.$detil_fasilitas->ID_DETAIL_FASILITAS),'<i class="fa fa-eye"></i>',array('title'=>'detail','class'=>'btn btn-danger btn-sm')); 
+			echo anchor(site_url('detil_fasilitas/read/'.$detil_fasilitas->id_detail_fasilitas),'<i class="fa fa-eye"></i>',array('title'=>'detail','class'=>'btn btn-danger btn-sm')); 
 			echo '  '; 
-			echo anchor(site_url('detil_fasilitas/update/'.$detil_fasilitas->ID_DETAIL_FASILITAS),'<i class="fa fa-pencil-square-o"></i>',array('title'=>'edit','class'=>'btn btn-danger btn-sm')); 
+			echo anchor(site_url('detil_fasilitas/update/'.$detil_fasilitas->id_detail_fasilitas),'<i class="fa fa-pencil-square-o"></i>',array('title'=>'edit','class'=>'btn btn-danger btn-sm')); 
 			echo '  '; 
-			echo anchor(site_url('detil_fasilitas/delete/'.$detil_fasilitas->ID_DETAIL_FASILITAS),'<i class="fa fa-trash-o"></i>','title="delete" class="btn btn-danger btn-sm" onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
+			echo anchor(site_url('detil_fasilitas/delete/'.$detil_fasilitas->id_detail_fasilitas),'<i class="fa fa-trash-o"></i>','title="delete" class="btn btn-danger btn-sm" onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
 			?>
 		    </td>
 	        </tr>

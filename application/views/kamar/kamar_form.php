@@ -8,19 +8,19 @@
                   <h3 class='box-title'>KAMAR</h3>
                       <div class='box box-primary'>
         <form action="<?php echo $action; ?>" method="post"><table class='table table-bordered'>
-	    <tr><td>NAMA KAMAR <?php echo form_error('NAMA_KAMAR') ?></td>
-            <td><input type="text" class="form-control" name="NAMA_KAMAR" id="NAMA_KAMAR" placeholder="NAMA KAMAR" value="<?php echo $NAMA_KAMAR; ?>" />
+	    <tr><td>Nama Kamar <?php echo form_error('nama_kamar') ?></td>
+            <td><input type="text" class="form-control" name="nama_kamar" id="nama_kamar" placeholder="Nama Kamar" value="<?php echo $nama_kamar; ?>" />
         </td>
-	    <tr><td>NO KAMAR <?php echo form_error('NO_KAMAR') ?></td>
-            <td><input type="text" class="form-control" name="NO_KAMAR" id="NO_KAMAR" placeholder="NO KAMAR" value="<?php echo $NO_KAMAR; ?>" />
+	    <tr><td>No Kamar <?php echo form_error('no_kamar') ?></td>
+            <td><input type="text" class="form-control" name="no_kamar" id="no_kamar" placeholder="No Kamar" value="<?php echo $no_kamar; ?>" />
         </td>
-	    <tr><td>KAPASITAS <?php echo form_error('KAPASITAS') ?></td>
-            <td><input type="text" class="form-control" name="KAPASITAS" id="KAPASITAS" placeholder="KAPASITAS" value="<?php echo $KAPASITAS; ?>" />
+	    <tr><td>Kapasitas <?php echo form_error('kapasitas') ?></td>
+            <td><input type="text" class="form-control" name="kapasitas" id="kapasitas" placeholder="Kapasitas" value="<?php echo $kapasitas; ?>" />
         </td>
-	    <tr><td>STATUS KAMAR <?php echo form_error('STATUS_KAMAR') ?></td>
-            <td><input type="text" class="form-control" name="STATUS_KAMAR" id="STATUS_KAMAR" placeholder="STATUS KAMAR" value="<?php echo $STATUS_KAMAR; ?>" />
+	    <tr><td>Status Kamar <?php echo form_error('status_kamar') ?></td>
+            <td><input type="text" class="form-control" name="status_kamar" id="status_kamar" placeholder="Status Kamar" value="<?php echo $status_kamar; ?>" />
         </td>
-	    <input type="hidden" name="ID_KAMAR" value="<?php echo $ID_KAMAR; ?>" /> 
+	    <input type="hidden" name="id_kamar" value="<?php echo $id_kamar; ?>" /> 
 	    <tr><td colspan='2'><button type="submit" class="btn btn-primary"><?php echo $button ?></button> 
 	    <a href="<?php echo site_url('kamar') ?>" class="btn btn-default">Cancel</a></td></tr>
 	

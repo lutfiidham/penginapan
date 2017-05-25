@@ -7,11 +7,11 @@
                 <div class='box-header'>
                 <h3 class='box-title'>Pegawai Read</h3>
         <table class="table table-bordered">
-	    <tr><td>NAMA PEGAWAI</td><td><?php echo $NAMA_PEGAWAI; ?></td></tr>
-	    <tr><td>ALAMAT PEGAWAI</td><td><?php echo $ALAMAT_PEGAWAI; ?></td></tr>
-	    <tr><td>TELP PEGAWAI</td><td><?php echo $TELP_PEGAWAI; ?></td></tr>
-	    <tr><td>JABATAN ID</td><td><?php echo $JABATAN_ID; ?></td></tr>
-	    <tr><td>STATUS PEGAWAI</td><td><?php echo $STATUS_PEGAWAI; ?></td></tr>
+	    <tr><td>Nama Pegawai</td><td><?php echo $nama_pegawai; ?></td></tr>
+	    <tr><td>Alamat Pegawai</td><td><?php echo $alamat_pegawai; ?></td></tr>
+	    <tr><td>Telp Pegawai</td><td><?php echo $telp_pegawai; ?></td></tr>
+	    <tr><td>Jabatan Id</td><td><?php echo $jabatan_id; ?></td></tr>
+	    <tr><td>Status Pegawai</td><td><?php echo $status_pegawai; ?></td></tr>
 	    <tr><td></td><td><a href="<?php echo site_url('pegawai') ?>" class="btn btn-default">Cancel</a></td></tr>
 	</table>
         </div><!-- /.box-body -->

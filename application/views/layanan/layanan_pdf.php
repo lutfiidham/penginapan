@@ -20,7 +20,7 @@
         <table class="word-table" style="margin-bottom: 10px">
             <tr>
                 <th>No</th>
-		<th>NAMA LAYANAN</th>
+		<th>Nama Layanan</th>
 		
             </tr><?php
             foreach ($layanan_data as $layanan)
@@ -28,7 +28,7 @@
                 ?>
                 <tr>
 		      <td><?php echo ++$start ?></td>
-		      <td><?php echo $layanan->NAMA_LAYANAN ?></td>	
+		      <td><?php echo $layanan->nama_layanan ?></td>	
                 </tr>
                 <?php
             }

@@ -30,12 +30,12 @@ class Pegawai extends CI_Controller
         $row = $this->Pegawai_model->get_by_id($id);
         if ($row) {
             $data = array(
-		'ID_PEGAWAI' => $row->ID_PEGAWAI,
-		'NAMA_PEGAWAI' => $row->NAMA_PEGAWAI,
-		'ALAMAT_PEGAWAI' => $row->ALAMAT_PEGAWAI,
-		'TELP_PEGAWAI' => $row->TELP_PEGAWAI,
-		'JABATAN_ID' => $row->JABATAN_ID,
-		'STATUS_PEGAWAI' => $row->STATUS_PEGAWAI,
+		'id_pegawai' => $row->id_pegawai,
+		'nama_pegawai' => $row->nama_pegawai,
+		'alamat_pegawai' => $row->alamat_pegawai,
+		'telp_pegawai' => $row->telp_pegawai,
+		'jabatan_id' => $row->jabatan_id,
+		'status_pegawai' => $row->status_pegawai,
 	    );
             $this->template->load('template','pegawai_read', $data);
         } else {
@@ -49,12 +49,12 @@ class Pegawai extends CI_Controller
         $data = array(
             'button' => 'Create',
             'action' => site_url('pegawai/create_action'),
-	    'ID_PEGAWAI' => set_value('ID_PEGAWAI'),
-	    'NAMA_PEGAWAI' => set_value('NAMA_PEGAWAI'),
-	    'ALAMAT_PEGAWAI' => set_value('ALAMAT_PEGAWAI'),
-	    'TELP_PEGAWAI' => set_value('TELP_PEGAWAI'),
-	    'JABATAN_ID' => set_value('JABATAN_ID'),
-	    'STATUS_PEGAWAI' => set_value('STATUS_PEGAWAI'),
+	    'id_pegawai' => set_value('id_pegawai'),
+	    'nama_pegawai' => set_value('nama_pegawai'),
+	    'alamat_pegawai' => set_value('alamat_pegawai'),
+	    'telp_pegawai' => set_value('telp_pegawai'),
+	    'jabatan_id' => set_value('jabatan_id'),
+	    'status_pegawai' => set_value('status_pegawai'),
 	);
         $this->template->load('template','pegawai_form', $data);
     }
@@ -67,11 +67,11 @@ class Pegawai extends CI_Controller
             $this->create();
         } else {
             $data = array(
-		'NAMA_PEGAWAI' => $this->input->post('NAMA_PEGAWAI',TRUE),
-		'ALAMAT_PEGAWAI' => $this->input->post('ALAMAT_PEGAWAI',TRUE),
-		'TELP_PEGAWAI' => $this->input->post('TELP_PEGAWAI',TRUE),
-		'JABATAN_ID' => $this->input->post('JABATAN_ID',TRUE),
-		'STATUS_PEGAWAI' => $this->input->post('STATUS_PEGAWAI',TRUE),
+		'nama_pegawai' => $this->input->post('nama_pegawai',TRUE),
+		'alamat_pegawai' => $this->input->post('alamat_pegawai',TRUE),
+		'telp_pegawai' => $this->input->post('telp_pegawai',TRUE),
+		'jabatan_id' => $this->input->post('jabatan_id',TRUE),
+		'status_pegawai' => $this->input->post('status_pegawai',TRUE),
 	    );
 
             $this->Pegawai_model->insert($data);
@@ -88,12 +88,12 @@ class Pegawai extends CI_Controller
             $data = array(
                 'button' => 'Update',
                 'action' => site_url('pegawai/update_action'),
-		'ID_PEGAWAI' => set_value('ID_PEGAWAI', $row->ID_PEGAWAI),
-		'NAMA_PEGAWAI' => set_value('NAMA_PEGAWAI', $row->NAMA_PEGAWAI),
-		'ALAMAT_PEGAWAI' => set_value('ALAMAT_PEGAWAI', $row->ALAMAT_PEGAWAI),
-		'TELP_PEGAWAI' => set_value('TELP_PEGAWAI', $row->TELP_PEGAWAI),
-		'JABATAN_ID' => set_value('JABATAN_ID', $row->JABATAN_ID),
-		'STATUS_PEGAWAI' => set_value('STATUS_PEGAWAI', $row->STATUS_PEGAWAI),
+		'id_pegawai' => set_value('id_pegawai', $row->id_pegawai),
+		'nama_pegawai' => set_value('nama_pegawai', $row->nama_pegawai),
+		'alamat_pegawai' => set_value('alamat_pegawai', $row->alamat_pegawai),
+		'telp_pegawai' => set_value('telp_pegawai', $row->telp_pegawai),
+		'jabatan_id' => set_value('jabatan_id', $row->jabatan_id),
+		'status_pegawai' => set_value('status_pegawai', $row->status_pegawai),
 	    );
             $this->template->load('template','pegawai_form', $data);
         } else {
@@ -107,17 +107,17 @@ class Pegawai extends CI_Controller
         $this->_rules();
 
         if ($this->form_validation->run() == FALSE) {
-            $this->update($this->input->post('ID_PEGAWAI', TRUE));
+            $this->update($this->input->post('id_pegawai', TRUE));
         } else {
             $data = array(
-		'NAMA_PEGAWAI' => $this->input->post('NAMA_PEGAWAI',TRUE),
-		'ALAMAT_PEGAWAI' => $this->input->post('ALAMAT_PEGAWAI',TRUE),
-		'TELP_PEGAWAI' => $this->input->post('TELP_PEGAWAI',TRUE),
-		'JABATAN_ID' => $this->input->post('JABATAN_ID',TRUE),
-		'STATUS_PEGAWAI' => $this->input->post('STATUS_PEGAWAI',TRUE),
+		'nama_pegawai' => $this->input->post('nama_pegawai',TRUE),
+		'alamat_pegawai' => $this->input->post('alamat_pegawai',TRUE),
+		'telp_pegawai' => $this->input->post('telp_pegawai',TRUE),
+		'jabatan_id' => $this->input->post('jabatan_id',TRUE),
+		'status_pegawai' => $this->input->post('status_pegawai',TRUE),
 	    );
 
-            $this->Pegawai_model->update($this->input->post('ID_PEGAWAI', TRUE), $data);
+            $this->Pegawai_model->update($this->input->post('id_pegawai', TRUE), $data);
             $this->session->set_flashdata('message', 'Update Record Success');
             redirect(site_url('pegawai'));
         }
@@ -139,13 +139,13 @@ class Pegawai extends CI_Controller
 
     public function _rules() 
     {
-	$this->form_validation->set_rules('NAMA_PEGAWAI', 'nama pegawai', 'trim|required');
-	$this->form_validation->set_rules('ALAMAT_PEGAWAI', 'alamat pegawai', 'trim|required');
-	$this->form_validation->set_rules('TELP_PEGAWAI', 'telp pegawai', 'trim|required');
-	$this->form_validation->set_rules('JABATAN_ID', 'jabatan id', 'trim|required');
-	$this->form_validation->set_rules('STATUS_PEGAWAI', 'status pegawai', 'trim|required');
+	$this->form_validation->set_rules('nama_pegawai', 'nama pegawai', 'trim|required');
+	$this->form_validation->set_rules('alamat_pegawai', 'alamat pegawai', 'trim|required');
+	$this->form_validation->set_rules('telp_pegawai', 'telp pegawai', 'trim|required');
+	$this->form_validation->set_rules('jabatan_id', 'jabatan id', 'trim|required');
+	$this->form_validation->set_rules('status_pegawai', 'status pegawai', 'trim|required');
 
-	$this->form_validation->set_rules('ID_PEGAWAI', 'ID_PEGAWAI', 'trim');
+	$this->form_validation->set_rules('id_pegawai', 'id_pegawai', 'trim');
 	$this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
     }
 
@@ -171,22 +171,22 @@ class Pegawai extends CI_Controller
 
         $kolomhead = 0;
         xlsWriteLabel($tablehead, $kolomhead++, "No");
-	xlsWriteLabel($tablehead, $kolomhead++, "NAMA PEGAWAI");
-	xlsWriteLabel($tablehead, $kolomhead++, "ALAMAT PEGAWAI");
-	xlsWriteLabel($tablehead, $kolomhead++, "TELP PEGAWAI");
-	xlsWriteLabel($tablehead, $kolomhead++, "JABATAN ID");
-	xlsWriteLabel($tablehead, $kolomhead++, "STATUS PEGAWAI");
+	xlsWriteLabel($tablehead, $kolomhead++, "Nama Pegawai");
+	xlsWriteLabel($tablehead, $kolomhead++, "Alamat Pegawai");
+	xlsWriteLabel($tablehead, $kolomhead++, "Telp Pegawai");
+	xlsWriteLabel($tablehead, $kolomhead++, "Jabatan Id");
+	xlsWriteLabel($tablehead, $kolomhead++, "Status Pegawai");
 
 	foreach ($this->Pegawai_model->get_all() as $data) {
             $kolombody = 0;
 
             //ubah xlsWriteLabel menjadi xlsWriteNumber untuk kolom numeric
             xlsWriteNumber($tablebody, $kolombody++, $nourut);
-	    xlsWriteLabel($tablebody, $kolombody++, $data->NAMA_PEGAWAI);
-	    xlsWriteLabel($tablebody, $kolombody++, $data->ALAMAT_PEGAWAI);
-	    xlsWriteLabel($tablebody, $kolombody++, $data->TELP_PEGAWAI);
-	    xlsWriteLabel($tablebody, $kolombody++, $data->JABATAN_ID);
-	    xlsWriteLabel($tablebody, $kolombody++, $data->STATUS_PEGAWAI);
+	    xlsWriteLabel($tablebody, $kolombody++, $data->nama_pegawai);
+	    xlsWriteLabel($tablebody, $kolombody++, $data->alamat_pegawai);
+	    xlsWriteLabel($tablebody, $kolombody++, $data->telp_pegawai);
+	    xlsWriteLabel($tablebody, $kolombody++, $data->jabatan_id);
+	    xlsWriteLabel($tablebody, $kolombody++, $data->status_pegawai);
 
 	    $tablebody++;
             $nourut++;
@@ -216,5 +216,5 @@ class Pegawai extends CI_Controller
 /* End of file Pegawai.php */
 /* Location: ./application/controllers/Pegawai.php */
 /* Please DO NOT modify this information : */
-/* Generated by Harviacode Codeigniter CRUD Generator 2017-05-23 18:30:25 */
+/* Generated by Harviacode Codeigniter CRUD Generator 2017-05-25 19:35:04 */
 /* http://harviacode.com */

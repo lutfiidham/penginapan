@@ -14,8 +14,8 @@
             <thead>
                 <tr>
                     <th width="80px">No</th>
-		    <th>NAMA INVENTORI</th>
-		    <th>HARGA INVENTORI</th>
+		    <th>Nama Inventori</th>
+		    <th>Harga Inventori</th>
 		    <th>Action</th>
                 </tr>
             </thead>
@@ -27,15 +27,15 @@
                 ?>
                 <tr>
 		    <td><?php echo ++$start ?></td>
-		    <td><?php echo $inventori->NAMA_INVENTORI ?></td>
-		    <td><?php echo $inventori->HARGA_INVENTORI ?></td>
+		    <td><?php echo $inventori->nama_inventori ?></td>
+		    <td><?php echo $inventori->harga_inventori ?></td>
 		    <td style="text-align:center" width="140px">
 			<?php 
-			echo anchor(site_url('inventori/read/'.$inventori->ID_INVENTORI),'<i class="fa fa-eye"></i>',array('title'=>'detail','class'=>'btn btn-danger btn-sm')); 
+			echo anchor(site_url('inventori/read/'.$inventori->id_inventori),'<i class="fa fa-eye"></i>',array('title'=>'detail','class'=>'btn btn-danger btn-sm')); 
 			echo '  '; 
-			echo anchor(site_url('inventori/update/'.$inventori->ID_INVENTORI),'<i class="fa fa-pencil-square-o"></i>',array('title'=>'edit','class'=>'btn btn-danger btn-sm')); 
+			echo anchor(site_url('inventori/update/'.$inventori->id_inventori),'<i class="fa fa-pencil-square-o"></i>',array('title'=>'edit','class'=>'btn btn-danger btn-sm')); 
 			echo '  '; 
-			echo anchor(site_url('inventori/delete/'.$inventori->ID_INVENTORI),'<i class="fa fa-trash-o"></i>','title="delete" class="btn btn-danger btn-sm" onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
+			echo anchor(site_url('inventori/delete/'.$inventori->id_inventori),'<i class="fa fa-trash-o"></i>','title="delete" class="btn btn-danger btn-sm" onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
 			?>
 		    </td>
 	        </tr>

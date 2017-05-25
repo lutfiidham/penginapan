@@ -20,7 +20,7 @@
         <table class="word-table" style="margin-bottom: 10px">
             <tr>
                 <th>No</th>
-		<th>NAMA JABATAN</th>
+		<th>Nama Jabatan</th>
 		
             </tr><?php
             foreach ($jabatan_data as $jabatan)
@@ -28,7 +28,7 @@
                 ?>
                 <tr>
 		      <td><?php echo ++$start ?></td>
-		      <td><?php echo $jabatan->NAMA_JABATAN ?></td>	
+		      <td><?php echo $jabatan->nama_jabatan ?></td>	
                 </tr>
                 <?php
             }

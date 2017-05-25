@@ -20,9 +20,9 @@
         <table class="word-table" style="margin-bottom: 10px">
             <tr>
                 <th>No</th>
-		<th>NAMA</th>
-		<th>ALAMAT</th>
-		<th>TELP</th>
+		<th>Nama</th>
+		<th>Alamat</th>
+		<th>Telp</th>
 		
             </tr><?php
             foreach ($profil_data as $profil)
@@ -30,9 +30,9 @@
                 ?>
                 <tr>
 		      <td><?php echo ++$start ?></td>
-		      <td><?php echo $profil->NAMA ?></td>
-		      <td><?php echo $profil->ALAMAT ?></td>
-		      <td><?php echo $profil->TELP ?></td>	
+		      <td><?php echo $profil->nama ?></td>
+		      <td><?php echo $profil->alamat ?></td>
+		      <td><?php echo $profil->telp ?></td>	
                 </tr>
                 <?php
             }

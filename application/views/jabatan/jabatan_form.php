@@ -8,10 +8,10 @@
                   <h3 class='box-title'>JABATAN</h3>
                       <div class='box box-primary'>
         <form action="<?php echo $action; ?>" method="post"><table class='table table-bordered'>
-	    <tr><td>NAMA JABATAN <?php echo form_error('NAMA_JABATAN') ?></td>
-            <td><input type="text" class="form-control" name="NAMA_JABATAN" id="NAMA_JABATAN" placeholder="NAMA JABATAN" value="<?php echo $NAMA_JABATAN; ?>" />
+	    <tr><td>Nama Jabatan <?php echo form_error('nama_jabatan') ?></td>
+            <td><input type="text" class="form-control" name="nama_jabatan" id="nama_jabatan" placeholder="Nama Jabatan" value="<?php echo $nama_jabatan; ?>" />
         </td>
-	    <input type="hidden" name="ID_JABATAN" value="<?php echo $ID_JABATAN; ?>" /> 
+	    <input type="hidden" name="id_jabatan" value="<?php echo $id_jabatan; ?>" /> 
 	    <tr><td colspan='2'><button type="submit" class="btn btn-primary"><?php echo $button ?></button> 
 	    <a href="<?php echo site_url('jabatan') ?>" class="btn btn-default">Cancel</a></td></tr>
 	

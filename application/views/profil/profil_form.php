@@ -8,16 +8,16 @@
                   <h3 class='box-title'>PROFIL</h3>
                       <div class='box box-primary'>
         <form action="<?php echo $action; ?>" method="post"><table class='table table-bordered'>
-	    <tr><td>NAMA <?php echo form_error('NAMA') ?></td>
-            <td><input type="text" class="form-control" name="NAMA" id="NAMA" placeholder="NAMA" value="<?php echo $NAMA; ?>" />
+	    <tr><td>Nama <?php echo form_error('nama') ?></td>
+            <td><input type="text" class="form-control" name="nama" id="nama" placeholder="Nama" value="<?php echo $nama; ?>" />
         </td>
-	    <tr><td>ALAMAT <?php echo form_error('ALAMAT') ?></td>
-            <td><input type="text" class="form-control" name="ALAMAT" id="ALAMAT" placeholder="ALAMAT" value="<?php echo $ALAMAT; ?>" />
+	    <tr><td>Alamat <?php echo form_error('alamat') ?></td>
+            <td><input type="text" class="form-control" name="alamat" id="alamat" placeholder="Alamat" value="<?php echo $alamat; ?>" />
         </td>
-	    <tr><td>TELP <?php echo form_error('TELP') ?></td>
-            <td><input type="text" class="form-control" name="TELP" id="TELP" placeholder="TELP" value="<?php echo $TELP; ?>" />
+	    <tr><td>Telp <?php echo form_error('telp') ?></td>
+            <td><input type="text" class="form-control" name="telp" id="telp" placeholder="Telp" value="<?php echo $telp; ?>" />
         </td>
-	    <input type="hidden" name="ID_PROFIL" value="<?php echo $ID_PROFIL; ?>" /> 
+	    <input type="hidden" name="id_profil" value="<?php echo $id_profil; ?>" /> 
 	    <tr><td colspan='2'><button type="submit" class="btn btn-primary"><?php echo $button ?></button> 
 	    <a href="<?php echo site_url('profil') ?>" class="btn btn-default">Cancel</a></td></tr>
 	

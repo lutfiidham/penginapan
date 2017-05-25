@@ -30,9 +30,9 @@ class Detil_fasilitas extends CI_Controller
         $row = $this->Detil_fasilitas_model->get_by_id($id);
         if ($row) {
             $data = array(
-		'ID_DETAIL_FASILITAS' => $row->ID_DETAIL_FASILITAS,
-		'KAMAR_ID' => $row->KAMAR_ID,
-		'FASILITAS_ID' => $row->FASILITAS_ID,
+		'id_detail_fasilitas' => $row->id_detail_fasilitas,
+		'kamar_id' => $row->kamar_id,
+		'fasilitas_id' => $row->fasilitas_id,
 	    );
             $this->template->load('template','detil_fasilitas_read', $data);
         } else {
@@ -46,9 +46,9 @@ class Detil_fasilitas extends CI_Controller
         $data = array(
             'button' => 'Create',
             'action' => site_url('detil_fasilitas/create_action'),
-	    'ID_DETAIL_FASILITAS' => set_value('ID_DETAIL_FASILITAS'),
-	    'KAMAR_ID' => set_value('KAMAR_ID'),
-	    'FASILITAS_ID' => set_value('FASILITAS_ID'),
+	    'id_detail_fasilitas' => set_value('id_detail_fasilitas'),
+	    'kamar_id' => set_value('kamar_id'),
+	    'fasilitas_id' => set_value('fasilitas_id'),
 	);
         $this->template->load('template','detil_fasilitas_form', $data);
     }
@@ -61,8 +61,8 @@ class Detil_fasilitas extends CI_Controller
             $this->create();
         } else {
             $data = array(
-		'KAMAR_ID' => $this->input->post('KAMAR_ID',TRUE),
-		'FASILITAS_ID' => $this->input->post('FASILITAS_ID',TRUE),
+		'kamar_id' => $this->input->post('kamar_id',TRUE),
+		'fasilitas_id' => $this->input->post('fasilitas_id',TRUE),
 	    );
 
             $this->Detil_fasilitas_model->insert($data);
@@ -79,9 +79,9 @@ class Detil_fasilitas extends CI_Controller
             $data = array(
                 'button' => 'Update',
                 'action' => site_url('detil_fasilitas/update_action'),
-		'ID_DETAIL_FASILITAS' => set_value('ID_DETAIL_FASILITAS', $row->ID_DETAIL_FASILITAS),
-		'KAMAR_ID' => set_value('KAMAR_ID', $row->KAMAR_ID),
-		'FASILITAS_ID' => set_value('FASILITAS_ID', $row->FASILITAS_ID),
+		'id_detail_fasilitas' => set_value('id_detail_fasilitas', $row->id_detail_fasilitas),
+		'kamar_id' => set_value('kamar_id', $row->kamar_id),
+		'fasilitas_id' => set_value('fasilitas_id', $row->fasilitas_id),
 	    );
             $this->template->load('template','detil_fasilitas_form', $data);
         } else {
@@ -95,14 +95,14 @@ class Detil_fasilitas extends CI_Controller
         $this->_rules();
 
         if ($this->form_validation->run() == FALSE) {
-            $this->update($this->input->post('ID_DETAIL_FASILITAS', TRUE));
+            $this->update($this->input->post('id_detail_fasilitas', TRUE));
         } else {
             $data = array(
-		'KAMAR_ID' => $this->input->post('KAMAR_ID',TRUE),
-		'FASILITAS_ID' => $this->input->post('FASILITAS_ID',TRUE),
+		'kamar_id' => $this->input->post('kamar_id',TRUE),
+		'fasilitas_id' => $this->input->post('fasilitas_id',TRUE),
 	    );
 
-            $this->Detil_fasilitas_model->update($this->input->post('ID_DETAIL_FASILITAS', TRUE), $data);
+            $this->Detil_fasilitas_model->update($this->input->post('id_detail_fasilitas', TRUE), $data);
             $this->session->set_flashdata('message', 'Update Record Success');
             redirect(site_url('detil_fasilitas'));
         }
@@ -124,10 +124,10 @@ class Detil_fasilitas extends CI_Controller
 
     public function _rules() 
     {
-	$this->form_validation->set_rules('KAMAR_ID', 'kamar id', 'trim|required');
-	$this->form_validation->set_rules('FASILITAS_ID', 'fasilitas id', 'trim|required');
+	$this->form_validation->set_rules('kamar_id', 'kamar id', 'trim|required');
+	$this->form_validation->set_rules('fasilitas_id', 'fasilitas id', 'trim|required');
 
-	$this->form_validation->set_rules('ID_DETAIL_FASILITAS', 'ID_DETAIL_FASILITAS', 'trim');
+	$this->form_validation->set_rules('id_detail_fasilitas', 'id_detail_fasilitas', 'trim');
 	$this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
     }
 
@@ -153,16 +153,16 @@ class Detil_fasilitas extends CI_Controller
 
         $kolomhead = 0;
         xlsWriteLabel($tablehead, $kolomhead++, "No");
-	xlsWriteLabel($tablehead, $kolomhead++, "KAMAR ID");
-	xlsWriteLabel($tablehead, $kolomhead++, "FASILITAS ID");
+	xlsWriteLabel($tablehead, $kolomhead++, "Kamar Id");
+	xlsWriteLabel($tablehead, $kolomhead++, "Fasilitas Id");
 
 	foreach ($this->Detil_fasilitas_model->get_all() as $data) {
             $kolombody = 0;
 
             //ubah xlsWriteLabel menjadi xlsWriteNumber untuk kolom numeric
             xlsWriteNumber($tablebody, $kolombody++, $nourut);
-	    xlsWriteLabel($tablebody, $kolombody++, $data->KAMAR_ID);
-	    xlsWriteLabel($tablebody, $kolombody++, $data->FASILITAS_ID);
+	    xlsWriteLabel($tablebody, $kolombody++, $data->kamar_id);
+	    xlsWriteLabel($tablebody, $kolombody++, $data->fasilitas_id);
 
 	    $tablebody++;
             $nourut++;
@@ -192,5 +192,5 @@ class Detil_fasilitas extends CI_Controller
 /* End of file Detil_fasilitas.php */
 /* Location: ./application/controllers/Detil_fasilitas.php */
 /* Please DO NOT modify this information : */
-/* Generated by Harviacode Codeigniter CRUD Generator 2017-05-23 18:30:25 */
+/* Generated by Harviacode Codeigniter CRUD Generator 2017-05-25 19:35:04 */
 /* http://harviacode.com */

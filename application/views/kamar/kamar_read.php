@@ -7,10 +7,10 @@
                 <div class='box-header'>
                 <h3 class='box-title'>Kamar Read</h3>
         <table class="table table-bordered">
-	    <tr><td>NAMA KAMAR</td><td><?php echo $NAMA_KAMAR; ?></td></tr>
-	    <tr><td>NO KAMAR</td><td><?php echo $NO_KAMAR; ?></td></tr>
-	    <tr><td>KAPASITAS</td><td><?php echo $KAPASITAS; ?></td></tr>
-	    <tr><td>STATUS KAMAR</td><td><?php echo $STATUS_KAMAR; ?></td></tr>
+	    <tr><td>Nama Kamar</td><td><?php echo $nama_kamar; ?></td></tr>
+	    <tr><td>No Kamar</td><td><?php echo $no_kamar; ?></td></tr>
+	    <tr><td>Kapasitas</td><td><?php echo $kapasitas; ?></td></tr>
+	    <tr><td>Status Kamar</td><td><?php echo $status_kamar; ?></td></tr>
 	    <tr><td></td><td><a href="<?php echo site_url('kamar') ?>" class="btn btn-default">Cancel</a></td></tr>
 	</table>
         </div><!-- /.box-body -->
