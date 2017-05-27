@@ -48,6 +48,12 @@ class Menu extends CI_Controller
         }
     }
 
+    public function icon()
+    {
+        $this->template->load('template','icon');
+
+    }
+
     public function create()
     {
         $data = array(
