@@ -15,10 +15,11 @@
             <td><input type="text" class="form-control" name="no_kamar" id="no_kamar" placeholder="No Kamar" value="<?php echo $no_kamar; ?>" />
         </td>
 	    <tr><td>Kapasitas <?php echo form_error('kapasitas') ?></td>
-            <td><input type="text" class="form-control" name="kapasitas" id="kapasitas" placeholder="Kapasitas" value="<?php echo $kapasitas; ?>" />
+            <td><input type="number" class="form-control" name="kapasitas" id="kapasitas" placeholder="Kapasitas" value="<?php echo $kapasitas; ?>" />
         </td>
 	    <tr><td>Status Kamar <?php echo form_error('status_kamar') ?></td>
-            <td><input type="text" class="form-control" name="status_kamar" id="status_kamar" placeholder="Status Kamar" value="<?php echo $status_kamar; ?>" />
+                            <td><?php echo form_dropdown('status_kamar',array('1'=>'AKTIF','0'=>'TIDAK AKTIF'),$status_kamar,"class='form-control'");?>
+            
         </td>
 	    <input type="hidden" name="id_kamar" value="<?php echo $id_kamar; ?>" /> 
 	    <tr><td colspan='2'><button type="submit" class="btn btn-primary"><?php echo $button ?></button> 

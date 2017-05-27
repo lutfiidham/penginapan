@@ -15,7 +15,7 @@
             <td><input type="text" class="form-control" name="promo_akhir" id="promo_akhir" placeholder="Promo Akhir" value="<?php echo $promo_akhir; ?>" />
         </td>
 	    <tr><td>Harga Promo <?php echo form_error('harga_promo') ?></td>
-            <td><input type="text" class="form-control" name="harga_promo" id="harga_promo" placeholder="Harga Promo" value="<?php echo $harga_promo; ?>" />
+            <td><input type="number" class="form-control" name="harga_promo" id="harga_promo" placeholder="Harga Promo" value="<?php echo $harga_promo; ?>" />
         </td>
 	    <tr><td>Keterangan Promo <?php echo form_error('keterangan_promo') ?></td>
             <td><input type="text" class="form-control" name="keterangan_promo" id="keterangan_promo" placeholder="Keterangan Promo" value="<?php echo $keterangan_promo; ?>" />

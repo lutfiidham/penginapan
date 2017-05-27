@@ -17,7 +17,7 @@
 		    <th>Nama Pegawai</th>
 		    <th>Alamat Pegawai</th>
 		    <th>Telp Pegawai</th>
-		    <th>Jabatan Id</th>
+		    <th>Jabatan</th>
 		    <th>Status Pegawai</th>
 		    <th>Action</th>
                 </tr>
@@ -25,16 +25,19 @@
 	    <tbody>
             <?php
             $start = 0;
+
             foreach ($pegawai_data as $pegawai)
             {
+
+            $status_pegawai = $pegawai->status_pegawai==1?'AKTIF':'TIDAK AKTIF';
                 ?>
                 <tr>
 		    <td><?php echo ++$start ?></td>
 		    <td><?php echo $pegawai->nama_pegawai ?></td>
 		    <td><?php echo $pegawai->alamat_pegawai ?></td>
 		    <td><?php echo $pegawai->telp_pegawai ?></td>
-		    <td><?php echo $pegawai->jabatan_id ?></td>
-		    <td><?php echo $pegawai->status_pegawai ?></td>
+		    <td><?php echo $pegawai->nama_jabatan ?></td>
+		    <td><?php echo $status_pegawai ?></td>
 		    <td style="text-align:center" width="140px">
 			<?php 
 			echo anchor(site_url('pegawai/read/'.$pegawai->id_pegawai),'<i class="fa fa-eye"></i>',array('title'=>'detail','class'=>'btn btn-danger btn-sm')); 

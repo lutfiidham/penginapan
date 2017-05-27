@@ -18,8 +18,12 @@ class Pegawai_model extends CI_Model
     // get all
     function get_all()
     {
-        $this->db->order_by($this->id, $this->order);
-        return $this->db->get($this->table)->result();
+        $sql = "SELECT id_pegawai, nama_pegawai, alamat_pegawai, telp_pegawai, nama_jabatan, status_pegawai 
+                FROM pegawai as p, jabatan as j 
+                WHERE p.jabatan_id=j.id_jabatan";
+        return $this->db->query($sql)->result();
+        // $this->db->order_by($this->id, $this->order);
+        // return $this->db->get($this->table)->result();
     }
 
     // get data by id

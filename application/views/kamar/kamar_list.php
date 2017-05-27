@@ -26,6 +26,8 @@
             $start = 0;
             foreach ($kamar_data as $kamar)
             {
+            $kamar->status_kamar = $kamar->status_kamar==1?'AKTIF':'TIDAK AKTIF';
+
                 ?>
                 <tr>
 		    <td><?php echo ++$start ?></td>

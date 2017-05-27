@@ -126,7 +126,7 @@ class Inventori extends CI_Controller
     public function _rules() 
     {
 	$this->form_validation->set_rules('nama_inventori', 'nama inventori', 'trim|required');
-	$this->form_validation->set_rules('harga_inventori', 'harga inventori', 'trim|required');
+	$this->form_validation->set_rules('harga_inventori', 'harga inventori', 'trim|required|numeric');
 
 	$this->form_validation->set_rules('id_inventori', 'id_inventori', 'trim');
 	$this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');

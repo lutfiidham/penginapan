@@ -12,7 +12,7 @@
             <td><input type="text" class="form-control" name="nama_inventori" id="nama_inventori" placeholder="Nama Inventori" value="<?php echo $nama_inventori; ?>" />
         </td>
 	    <tr><td>Harga Inventori <?php echo form_error('harga_inventori') ?></td>
-            <td><input type="text" class="form-control" name="harga_inventori" id="harga_inventori" placeholder="Harga Inventori" value="<?php echo $harga_inventori; ?>" />
+            <td><input type="number" class="form-control" name="harga_inventori" id="harga_inventori" placeholder="Harga Inventori" value="<?php echo $harga_inventori; ?>" />
         </td>
 	    <input type="hidden" name="id_inventori" value="<?php echo $id_inventori; ?>" /> 
 	    <tr><td colspan='2'><button type="submit" class="btn btn-primary"><?php echo $button ?></button> 

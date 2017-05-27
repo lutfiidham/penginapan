@@ -24,6 +24,8 @@
             $start = 0;
             foreach ($fasilitas_data as $fasilitas)
             {
+            $fasilitas->status_fasilitas = $fasilitas->status_fasilitas==1?'AKTIF':'TIDAK AKTIF';
+
                 ?>
                 <tr>
 		    <td><?php echo ++$start ?></td>

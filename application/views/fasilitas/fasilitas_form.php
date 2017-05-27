@@ -12,7 +12,7 @@
             <td><input type="text" class="form-control" name="nama_fasilitas" id="nama_fasilitas" placeholder="Nama Fasilitas" value="<?php echo $nama_fasilitas; ?>" />
         </td>
 	    <tr><td>Status Fasilitas <?php echo form_error('status_fasilitas') ?></td>
-            <td><input type="text" class="form-control" name="status_fasilitas" id="status_fasilitas" placeholder="Status Fasilitas" value="<?php echo $status_fasilitas; ?>" />
+                       <td><?php echo form_dropdown('status_fasilitas',array('1'=>'AKTIF','0'=>'TIDAK AKTIF'),$status_fasilitas,"class='form-control'");?>
         </td>
 	    <input type="hidden" name="id_fasilitas" value="<?php echo $id_fasilitas; ?>" /> 
 	    <tr><td colspan='2'><button type="submit" class="btn btn-primary"><?php echo $button ?></button> 

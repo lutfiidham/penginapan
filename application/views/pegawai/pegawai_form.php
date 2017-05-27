@@ -15,13 +15,14 @@
             <td><input type="text" class="form-control" name="alamat_pegawai" id="alamat_pegawai" placeholder="Alamat Pegawai" value="<?php echo $alamat_pegawai; ?>" />
         </td>
 	    <tr><td>Telp Pegawai <?php echo form_error('telp_pegawai') ?></td>
-            <td><input type="text" class="form-control" name="telp_pegawai" id="telp_pegawai" placeholder="Telp Pegawai" value="<?php echo $telp_pegawai; ?>" />
+            <td><input type="number" class="form-control" name="telp_pegawai" id="telp_pegawai" placeholder="Telp Pegawai" value="<?php echo $telp_pegawai; ?>" />
         </td>
 	    <tr><td>Jabatan Id <?php echo form_error('jabatan_id') ?></td>
-            <td><input type="text" class="form-control" name="jabatan_id" id="jabatan_id" placeholder="Jabatan Id" value="<?php echo $jabatan_id; ?>" />
+            <td>
+            <?php echo cmb_dinamis('jabatan_id', 'jabatan', 'nama_jabatan', 'id_jabatan', $jabatan_id) ?>
         </td>
 	    <tr><td>Status Pegawai <?php echo form_error('status_pegawai') ?></td>
-            <td><input type="text" class="form-control" name="status_pegawai" id="status_pegawai" placeholder="Status Pegawai" value="<?php echo $status_pegawai; ?>" />
+                            <td><?php echo form_dropdown('status_pegawai',array('1'=>'AKTIF','0'=>'TIDAK AKTIF'),$status_pegawai,"class='form-control'");?>
         </td>
 	    <input type="hidden" name="id_pegawai" value="<?php echo $id_pegawai; ?>" /> 
 	    <tr><td colspan='2'><button type="submit" class="btn btn-primary"><?php echo $button ?></button> 
