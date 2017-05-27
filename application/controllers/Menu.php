@@ -19,7 +19,9 @@ class Menu extends CI_Controller
         $menu = $this->Menu_model->get_all();
 
         $data = array(
-            'menu_data' => $menu
+            'menu_data' => $menu,
+            'judul' => basename($this->uri->segment(1))
+
         );
 
         $this->template->load('template','menu/menu_list', $data);
@@ -36,6 +38,8 @@ class Menu extends CI_Controller
 		'icon' => $row->icon,
 		'is_active' => $row->is_active,
 		'is_parent' => $row->is_parent,
+            'judul' => basename($this->uri->segment(1))
+
 	    );
             $this->template->load('template','menu/menu_read', $data);
         } else {
@@ -55,6 +59,8 @@ class Menu extends CI_Controller
 	    'icon' => set_value('icon'),
 	    'is_active' => set_value('is_active'),
 	    'is_parent' => set_value('is_parent'),
+            'judul' => basename($this->uri->segment(1))
+        
 	);
         $this->template->load('template','menu/menu_form', $data);
     }
@@ -94,6 +100,8 @@ class Menu extends CI_Controller
 		'icon' => set_value('icon', $row->icon),
 		'is_active' => set_value('is_active', $row->is_active),
 		'is_parent' => set_value('is_parent', $row->is_parent),
+        'judul' => basename($this->uri->segment(1))
+
 	    );
             $this->template->load('template','menu/menu_form', $data);
         } else {

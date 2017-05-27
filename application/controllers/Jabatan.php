@@ -22,7 +22,7 @@ class Jabatan extends CI_Controller
             'jabatan_data' => $jabatan
         );
 
-        $this->template->load('template','jabatan_list', $data);
+        $this->template->load('template','jabatan/jabatan_list', $data);
     }
 
     public function read($id) 
@@ -33,7 +33,7 @@ class Jabatan extends CI_Controller
 		'id_jabatan' => $row->id_jabatan,
 		'nama_jabatan' => $row->nama_jabatan,
 	    );
-            $this->template->load('template','jabatan_read', $data);
+            $this->template->load('template','jabatan/jabatan_read', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('jabatan'));
@@ -79,7 +79,7 @@ class Jabatan extends CI_Controller
 		'id_jabatan' => set_value('id_jabatan', $row->id_jabatan),
 		'nama_jabatan' => set_value('nama_jabatan', $row->nama_jabatan),
 	    );
-            $this->template->load('template','jabatan_form', $data);
+            $this->template->load('template','jabatan/jabatan_form', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('jabatan'));

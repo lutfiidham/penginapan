@@ -22,7 +22,7 @@ class Inventori extends CI_Controller
             'inventori_data' => $inventori
         );
 
-        $this->template->load('template','inventori_list', $data);
+        $this->template->load('template','inventori/inventori_list', $data);
     }
 
     public function read($id) 
@@ -34,7 +34,7 @@ class Inventori extends CI_Controller
 		'nama_inventori' => $row->nama_inventori,
 		'harga_inventori' => $row->harga_inventori,
 	    );
-            $this->template->load('template','inventori_read', $data);
+            $this->template->load('template','inventori/inventori_read', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('inventori'));
@@ -50,7 +50,7 @@ class Inventori extends CI_Controller
 	    'nama_inventori' => set_value('nama_inventori'),
 	    'harga_inventori' => set_value('harga_inventori'),
 	);
-        $this->template->load('template','inventori_form', $data);
+        $this->template->load('template','inventori/inventori_form', $data);
     }
     
     public function create_action() 
@@ -83,7 +83,7 @@ class Inventori extends CI_Controller
 		'nama_inventori' => set_value('nama_inventori', $row->nama_inventori),
 		'harga_inventori' => set_value('harga_inventori', $row->harga_inventori),
 	    );
-            $this->template->load('template','inventori_form', $data);
+            $this->template->load('template','inventori/inventori_form', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('inventori'));

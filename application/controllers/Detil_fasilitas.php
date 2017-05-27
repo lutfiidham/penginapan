@@ -22,7 +22,7 @@ class Detil_fasilitas extends CI_Controller
             'detil_fasilitas_data' => $detil_fasilitas
         );
 
-        $this->template->load('template','detil_fasilitas_list', $data);
+        $this->template->load('template','detil_fasilitas/detil_fasilitas_list', $data);
     }
 
     public function read($id) 
@@ -34,7 +34,7 @@ class Detil_fasilitas extends CI_Controller
 		'kamar_id' => $row->kamar_id,
 		'fasilitas_id' => $row->fasilitas_id,
 	    );
-            $this->template->load('template','detil_fasilitas_read', $data);
+            $this->template->load('template','detil_fasilitas/detil_fasilitas_read', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('detil_fasilitas'));
@@ -50,7 +50,7 @@ class Detil_fasilitas extends CI_Controller
 	    'kamar_id' => set_value('kamar_id'),
 	    'fasilitas_id' => set_value('fasilitas_id'),
 	);
-        $this->template->load('template','detil_fasilitas_form', $data);
+        $this->template->load('template','detil_fasilitas/detil_fasilitas_form', $data);
     }
     
     public function create_action() 
@@ -83,7 +83,7 @@ class Detil_fasilitas extends CI_Controller
 		'kamar_id' => set_value('kamar_id', $row->kamar_id),
 		'fasilitas_id' => set_value('fasilitas_id', $row->fasilitas_id),
 	    );
-            $this->template->load('template','detil_fasilitas_form', $data);
+            $this->template->load('template','detil_fasilitas/detil_fasilitas_form', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('detil_fasilitas'));

@@ -22,7 +22,7 @@ class Pegawai extends CI_Controller
             'pegawai_data' => $pegawai
         );
 
-        $this->template->load('template','pegawai_list', $data);
+        $this->template->load('template','pegawai/pegawai_list', $data);
     }
 
     public function read($id) 
@@ -37,7 +37,7 @@ class Pegawai extends CI_Controller
 		'jabatan_id' => $row->jabatan_id,
 		'status_pegawai' => $row->status_pegawai,
 	    );
-            $this->template->load('template','pegawai_read', $data);
+            $this->template->load('template','pegawai/pegawai_read', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('pegawai'));
@@ -56,7 +56,7 @@ class Pegawai extends CI_Controller
 	    'jabatan_id' => set_value('jabatan_id'),
 	    'status_pegawai' => set_value('status_pegawai'),
 	);
-        $this->template->load('template','pegawai_form', $data);
+        $this->template->load('template','pegawai/pegawai_form', $data);
     }
     
     public function create_action() 
@@ -95,7 +95,7 @@ class Pegawai extends CI_Controller
 		'jabatan_id' => set_value('jabatan_id', $row->jabatan_id),
 		'status_pegawai' => set_value('status_pegawai', $row->status_pegawai),
 	    );
-            $this->template->load('template','pegawai_form', $data);
+            $this->template->load('template','pegawai/pegawai_form', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('pegawai'));

@@ -22,7 +22,7 @@ class Layanan extends CI_Controller
             'layanan_data' => $layanan
         );
 
-        $this->template->load('template','layanan_list', $data);
+        $this->template->load('template','layanan/layanan_list', $data);
     }
 
     public function read($id) 
@@ -33,7 +33,7 @@ class Layanan extends CI_Controller
 		'id_layanan' => $row->id_layanan,
 		'nama_layanan' => $row->nama_layanan,
 	    );
-            $this->template->load('template','layanan_read', $data);
+            $this->template->load('template','layanan/layanan_read', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('layanan'));
@@ -48,7 +48,7 @@ class Layanan extends CI_Controller
 	    'id_layanan' => set_value('id_layanan'),
 	    'nama_layanan' => set_value('nama_layanan'),
 	);
-        $this->template->load('template','layanan_form', $data);
+        $this->template->load('template','layanan/layanan_form', $data);
     }
     
     public function create_action() 
@@ -79,7 +79,7 @@ class Layanan extends CI_Controller
 		'id_layanan' => set_value('id_layanan', $row->id_layanan),
 		'nama_layanan' => set_value('nama_layanan', $row->nama_layanan),
 	    );
-            $this->template->load('template','layanan_form', $data);
+            $this->template->load('template','layanan/layanan_form', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('layanan'));

@@ -22,7 +22,7 @@ class Promo extends CI_Controller
             'promo_data' => $promo
         );
 
-        $this->template->load('template','promo_list', $data);
+        $this->template->load('template','promo/promo_list', $data);
     }
 
     public function read($id) 
@@ -36,7 +36,7 @@ class Promo extends CI_Controller
 		'harga_promo' => $row->harga_promo,
 		'keterangan_promo' => $row->keterangan_promo,
 	    );
-            $this->template->load('template','promo_read', $data);
+            $this->template->load('template','promo/promo_read', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('promo'));
@@ -54,7 +54,7 @@ class Promo extends CI_Controller
 	    'harga_promo' => set_value('harga_promo'),
 	    'keterangan_promo' => set_value('keterangan_promo'),
 	);
-        $this->template->load('template','promo_form', $data);
+        $this->template->load('template','promo/promo_form', $data);
     }
     
     public function create_action() 
@@ -91,7 +91,7 @@ class Promo extends CI_Controller
 		'harga_promo' => set_value('harga_promo', $row->harga_promo),
 		'keterangan_promo' => set_value('keterangan_promo', $row->keterangan_promo),
 	    );
-            $this->template->load('template','promo_form', $data);
+            $this->template->load('template','promo/promo_form', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('promo'));

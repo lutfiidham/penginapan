@@ -12,6 +12,7 @@ class Channel extends CI_Controller
         parent::__construct();
         $this->load->model('Channel_model');
         $this->load->library('form_validation');
+        
     }
 
     public function index()
@@ -19,7 +20,8 @@ class Channel extends CI_Controller
         $channel = $this->Channel_model->get_all();
 
         $data = array(
-            'channel_data' => $channel
+            'channel_data' => $channel,
+            'judul' => basename($this->uri->segment(1))
         );
 
         $this->template->load('template','channel/channel_list', $data);
@@ -32,7 +34,9 @@ class Channel extends CI_Controller
             $data = array(
 		'id_channel' => $row->id_channel,
 		'nama_channel' => $row->nama_channel,
-	    );
+            'judul' => basename($this->uri->segment(1))
+	    
+        );
             $this->template->load('template','channel/channel_read', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
@@ -47,6 +51,8 @@ class Channel extends CI_Controller
             'action' => site_url('channel/create_action'),
 	    'id_channel' => set_value('id_channel'),
 	    'nama_channel' => set_value('nama_channel'),
+            'judul' => basename($this->uri->segment(1))
+
 	);
         $this->template->load('template','channel/channel_form', $data);
     }
@@ -79,7 +85,9 @@ class Channel extends CI_Controller
                 'action' => site_url('channel/update_action'),
 		'id_channel' => set_value('id_channel', $row->id_channel),
 		'nama_channel' => set_value('nama_channel', $row->nama_channel),
-	    );
+            'judul' => basename($this->uri->segment(1))
+	    
+        );
             $this->template->load('template','channel/channel_form', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');

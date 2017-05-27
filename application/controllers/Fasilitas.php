@@ -22,7 +22,7 @@ class Fasilitas extends CI_Controller
             'fasilitas_data' => $fasilitas
         );
 
-        $this->template->load('template','fasilitas_list', $data);
+        $this->template->load('template','fasilitas/fasilitas_list', $data);
     }
 
     public function read($id) 
@@ -34,7 +34,7 @@ class Fasilitas extends CI_Controller
 		'nama_fasilitas' => $row->nama_fasilitas,
 		'status_fasilitas' => $row->status_fasilitas,
 	    );
-            $this->template->load('template','fasilitas_read', $data);
+            $this->template->load('template','fasilitas/fasilitas_read', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('fasilitas'));
@@ -50,7 +50,7 @@ class Fasilitas extends CI_Controller
 	    'nama_fasilitas' => set_value('nama_fasilitas'),
 	    'status_fasilitas' => set_value('status_fasilitas'),
 	);
-        $this->template->load('template','fasilitas_form', $data);
+        $this->template->load('template','fasilitas/fasilitas_form', $data);
     }
     
     public function create_action() 
@@ -83,7 +83,7 @@ class Fasilitas extends CI_Controller
 		'nama_fasilitas' => set_value('nama_fasilitas', $row->nama_fasilitas),
 		'status_fasilitas' => set_value('status_fasilitas', $row->status_fasilitas),
 	    );
-            $this->template->load('template','fasilitas_form', $data);
+            $this->template->load('template','fasilitas/fasilitas_form', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('fasilitas'));

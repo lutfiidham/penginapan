@@ -22,7 +22,7 @@ class Profil extends CI_Controller
             'profil_data' => $profil
         );
 
-        $this->template->load('template','profil_list', $data);
+        $this->template->load('template','profil/profil_list', $data);
     }
 
     public function read($id) 
@@ -35,7 +35,7 @@ class Profil extends CI_Controller
 		'alamat' => $row->alamat,
 		'telp' => $row->telp,
 	    );
-            $this->template->load('template','profil_read', $data);
+            $this->template->load('template','profil/profil_read', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('profil'));
@@ -52,7 +52,7 @@ class Profil extends CI_Controller
 	    'alamat' => set_value('alamat'),
 	    'telp' => set_value('telp'),
 	);
-        $this->template->load('template','profil_form', $data);
+        $this->template->load('template','profil/profil_form', $data);
     }
     
     public function create_action() 
@@ -87,7 +87,7 @@ class Profil extends CI_Controller
 		'alamat' => set_value('alamat', $row->alamat),
 		'telp' => set_value('telp', $row->telp),
 	    );
-            $this->template->load('template','profil_form', $data);
+            $this->template->load('template','profil/profil_form', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('profil'));

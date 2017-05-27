@@ -22,7 +22,7 @@ class Kamar extends CI_Controller
             'kamar_data' => $kamar
         );
 
-        $this->template->load('template','kamar_list', $data);
+        $this->template->load('template','kamar/kamar_list', $data);
     }
 
     public function read($id) 
@@ -36,7 +36,7 @@ class Kamar extends CI_Controller
 		'kapasitas' => $row->kapasitas,
 		'status_kamar' => $row->status_kamar,
 	    );
-            $this->template->load('template','kamar_read', $data);
+            $this->template->load('template','kamar/kamar_read', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('kamar'));
@@ -54,7 +54,7 @@ class Kamar extends CI_Controller
 	    'kapasitas' => set_value('kapasitas'),
 	    'status_kamar' => set_value('status_kamar'),
 	);
-        $this->template->load('template','kamar_form', $data);
+        $this->template->load('template','kamar/kamar_form', $data);
     }
     
     public function create_action() 
@@ -91,7 +91,7 @@ class Kamar extends CI_Controller
 		'kapasitas' => set_value('kapasitas', $row->kapasitas),
 		'status_kamar' => set_value('status_kamar', $row->status_kamar),
 	    );
-            $this->template->load('template','kamar_form', $data);
+            $this->template->load('template','kamar/kamar_form', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('kamar'));
