@@ -61,6 +61,7 @@ class Fasilitas extends CI_Controller
             $this->create();
         } else {
             $data = array(
+              'id_fasilitas' => gen_id("fs", "fasilitas", "id_fasilitas", "4"),
 		'nama_fasilitas' => $this->input->post('nama_fasilitas',TRUE),
 		'status_fasilitas' => $this->input->post('status_fasilitas',TRUE),
 	    );

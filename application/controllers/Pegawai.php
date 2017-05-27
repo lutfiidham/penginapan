@@ -67,6 +67,7 @@ class Pegawai extends CI_Controller
             $this->create();
         } else {
             $data = array(
+            'id_pegawai' => gen_id("pg", "pegawai", "id_pegawai", "4"),
 		'nama_pegawai' => $this->input->post('nama_pegawai',TRUE),
 		'alamat_pegawai' => $this->input->post('alamat_pegawai',TRUE),
 		'telp_pegawai' => $this->input->post('telp_pegawai',TRUE),

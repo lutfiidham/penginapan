@@ -65,6 +65,7 @@ class Kamar extends CI_Controller
             $this->create();
         } else {
             $data = array(
+              'id_kamar' => gen_id("km", "kamar", "id_kamar", "4"),
 		'nama_kamar' => $this->input->post('nama_kamar',TRUE),
 		'no_kamar' => $this->input->post('no_kamar',TRUE),
 		'kapasitas' => $this->input->post('kapasitas',TRUE),

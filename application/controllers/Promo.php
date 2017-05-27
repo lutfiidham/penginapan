@@ -65,6 +65,7 @@ class Promo extends CI_Controller
             $this->create();
         } else {
             $data = array(
+            'id_promo' => gen_id("pm", "promo", "id_promo", "4"),
 		'promo_awal' => $this->input->post('promo_awal',TRUE),
 		'promo_akhir' => $this->input->post('promo_akhir',TRUE),
 		'harga_promo' => $this->input->post('harga_promo',TRUE),

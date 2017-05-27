@@ -65,7 +65,7 @@ class Channel extends CI_Controller
             $this->create();
         } else {
             $data = array(
-              'id_channel' => gen_id("CH", "channel", "id_channel"),
+              'id_channel' => gen_id("ch", "channel", "id_channel", "4"),
 		'nama_channel' => $this->input->post('nama_channel',TRUE),
 	    );
 

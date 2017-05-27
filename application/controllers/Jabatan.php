@@ -48,7 +48,7 @@ class Jabatan extends CI_Controller
 	    'id_jabatan' => set_value('id_jabatan'),
 	    'nama_jabatan' => set_value('nama_jabatan'),
 	);
-        $this->template->load('template','jabatan_form', $data);
+        $this->template->load('template','jabatan/jabatan_form', $data);
     }
     
     public function create_action() 
@@ -59,6 +59,7 @@ class Jabatan extends CI_Controller
             $this->create();
         } else {
             $data = array(
+              'id_jabatan' => gen_id("jb", "jabatan", "id_jabatan", "4"),
 		'nama_jabatan' => $this->input->post('nama_jabatan',TRUE),
 	    );
 

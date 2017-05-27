@@ -63,7 +63,8 @@ class Profil extends CI_Controller
             $this->create();
         } else {
             $data = array(
-		'nama' => $this->input->post('nama',TRUE),
+            'id_profil' => gen_id("pr", "profil", "id_profil", "4"),
+        'nama' => $this->input->post('nama',TRUE),
 		'alamat' => $this->input->post('alamat',TRUE),
 		'telp' => $this->input->post('telp',TRUE),
 	    );

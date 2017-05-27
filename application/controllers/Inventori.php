@@ -61,6 +61,7 @@ class Inventori extends CI_Controller
             $this->create();
         } else {
             $data = array(
+              'id_inventori' => gen_id("in", "inventori", "id_inventori", "4"),
 		'nama_inventori' => $this->input->post('nama_inventori',TRUE),
 		'harga_inventori' => $this->input->post('harga_inventori',TRUE),
 	    );

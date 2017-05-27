@@ -59,6 +59,7 @@ class Layanan extends CI_Controller
             $this->create();
         } else {
             $data = array(
+            'id_layanan' => gen_id("ly", "layanan", "id_layanan", "4"),
 		'nama_layanan' => $this->input->post('nama_layanan',TRUE),
 	    );
 

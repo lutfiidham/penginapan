@@ -160,8 +160,8 @@
                             
                         // }
                         ?>
-
-                        <li><a href="<?php echo base_url() ?>index.php/menu"><i class='fa fa-list-alt'></i> <span>MENU MANAGEMENT</a></span></li><li class='treeview'>
+                    <li>
+                        <!-- <a href="<?php echo base_url() ?>index.php/menu"><i class='fa fa-list-alt'></i> <span>MENU MANAGEMENT</a></span></li><li class='treeview'> -->
                                     <a href="<?php echo base_url() ?>index.php/#"><i class='fa fa-home'></i>DATA MASTER <i class="fa fa-angle-left pull-right"></i></a>
                                         <ul class='treeview-menu'><li><a href="<?php echo base_url() ?>index.php/channel"><i class='fa fa-fax'></i> <span>CHANNEL</a></span></li>
                                         <li><a href="<?php echo base_url() ?>index.php/fasilitas"><i class='fa fa-bed'></i><span>FASILITAS</a></span></li>
