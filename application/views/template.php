@@ -140,26 +140,40 @@
                             </a>
                         </li>
                         <?php
-                        $menu = $this->db->get_where('menu', array('is_parent' => 0,'is_active'=>1));
-                        foreach ($menu->result() as $m) {
-                            // chek ada sub menu
-                            $submenu = $this->db->get_where('menu',array('is_parent'=>$m->id,'is_active'=>1));
-                            if($submenu->num_rows()>0){
-                                // tampilkan submenu
-                                echo "<li class='treeview'>
-                                    ".anchor('#',  "<i class='$m->icon'></i>".strtoupper($m->name).' <i class="fa fa-angle-left pull-right"></i>')."
-                                        <ul class='treeview-menu'>";
-                                foreach ($submenu->result() as $s){
-                                     echo "<li>" . anchor($s->link, "<i class='$s->icon'></i> <span>" . strtoupper($s->name)) . "</span></li>";
-                                }
-                                   echo"</ul>
-                                    </li>";
-                            }else{
-                                echo "<li>" . anchor($m->link, "<i class='$m->icon'></i> <span>" . strtoupper($m->name)) . "</span></li>";
-                            }
+                        // $menu = $this->db->get_where('menu', array('is_parent' => 0,'is_active'=>1));
+                        // foreach ($menu->result() as $m) {
+                        //     // chek ada sub menu
+                        //     $submenu = $this->db->get_where('menu',array('is_parent'=>$m->id,'is_active'=>1));
+                        //     if($submenu->num_rows()>0){
+                        //         // tampilkan submenu
+                        //         echo "<li class='treeview'>
+                        //             ".anchor('#',  "<i class='$m->icon'></i>".strtoupper($m->name).' <i class="fa fa-angle-left pull-right"></i>')."
+                        //                 <ul class='treeview-menu'>";
+                        //         foreach ($submenu->result() as $s){
+                        //              echo "<li>" . anchor($s->link, "<i class='$s->icon'></i> <span>" . strtoupper($s->name)) . "</span></li>";
+                        //         }
+                        //            echo"</ul>
+                        //             </li>";
+                        //     }else{
+                        //         echo "<li>" . anchor($m->link, "<i class='$m->icon'></i> <span>" . strtoupper($m->name)) . "</span></li>";
+                        //     }
                             
-                        }
+                        // }
                         ?>
+
+                        <li><a href="<?php echo base_url() ?>index.php/menu"><i class='fa fa-list-alt'></i> <span>MENU MANAGEMENT</a></span></li><li class='treeview'>
+                                    <a href="<?php echo base_url() ?>index.php/#"><i class='fa fa-home'></i>DATA MASTER <i class="fa fa-angle-left pull-right"></i></a>
+                                        <ul class='treeview-menu'><li><a href="<?php echo base_url() ?>index.php/channel"><i class='fa fa-fax'></i> <span>CHANNEL</a></span></li>
+                                        <li><a href="<?php echo base_url() ?>index.php/fasilitas"><i class='fa fa-bed'></i><span>FASILITAS</a></span></li>
+                                        <li><a href="<?php echo base_url() ?>index.php/inventori"><i class='fa fa-list'></i> <span>INVENTORI</a></span></li>
+                                        <li><a href="<?php echo base_url() ?>index.php/jabatan"><i class='fa fa-user-plus'></i> <span>JABATAN</a></span></li>
+                                        <li><a href="<?php echo base_url() ?>index.php/pegawai"><i class='fa fa-users'></i> <span>PEGAWAI</a></span></li>
+                                        <li><a href="<?php echo base_url() ?>index.php/kamar"><i class='fa fa-bed'></i> <span>KAMAR</a></span></li>
+                                        <li><a href="<?php echo base_url() ?>index.php/layanan"><i class='fa fa-phone-square'></i> <span>LAYANAN</a></span></li>
+                                        <li><a href="<?php echo base_url() ?>index.php/profil"><i class='fa fa-hospital-o'></i> <span>PROFIL</a></span></li>
+                                        <li><a href="<?php echo base_url() ?>index.php/promo"><i class='fa fa-dollar'></i> <span>PROMO</a></span></li></ul>
+                                    </li>
+
 
                     </ul>
                 </section>
